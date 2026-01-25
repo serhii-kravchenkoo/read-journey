@@ -1,13 +1,17 @@
 import styles from "./Register.module.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { signupUser } from "../../api/auth";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string().min(6, "Minimum 6 characters").required("Password is required"),});
+  password: Yup.string().min(7, "Minimum 7 characters").required("Password is required"),});
 
 const Register = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className={styles.wrapper}>
       <div className={styles.card}>
@@ -16,8 +20,19 @@ const Register = () => {
         <Formik
   initialValues={{ name: "", email: "", password: "" }}
   validationSchema={validationSchema}
-  onSubmit={(values) => {
-    console.log(values);
+  onSubmit={async (values, { setSubmitting }) => {
+    try {
+      const data = await signupUser(values);
+
+      localStorage.setItem("token", data.token);
+
+      navigate("/recommended");
+    } catch (error) {
+      console.error(error);
+      alert(error.response?.data?.message || "Signup error");
+    } finally {
+      setSubmitting(false);
+    }
   }}
 >
   <Form className={styles.form}>
@@ -43,14 +58,9 @@ const Register = () => {
       Registration
     </button>
   </Form>
-</Formik>
-
-        <p className={styles.text}>
-          Already have an account?{" "}
-          <a href="/login" className={styles.link}>
-            Log in
-          </a>
-        </p>
+        </Formik>
+        
+        <a href="/login" className={styles.link}>Already have an account? </a>
       </div>
     </section>
   );
