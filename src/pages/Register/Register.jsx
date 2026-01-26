@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { signupUser } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -60,7 +61,7 @@ const Register = () => {
   </Form>
         </Formik>
         
-        <a href="/login" className={styles.link}>Already have an account? </a>
+        <Link to="/login" className={styles.link}>Already have an account? </Link>
       </div>
     </section>
   );

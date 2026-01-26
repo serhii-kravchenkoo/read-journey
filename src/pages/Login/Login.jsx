@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { signinUser } from "../../api/auth";
+import { Link } from "react-router-dom";
 
 
 const validationSchema = Yup.object({
@@ -53,7 +54,7 @@ export default function Login() {
   </Form>
         </Formik>
 
-        <a href="/register" className={styles.link}> Don’t have an account?</a>
+        <Link to="/register" className={styles.link}>Don’t have an account?</Link>
               </div>
             </section>
   );
