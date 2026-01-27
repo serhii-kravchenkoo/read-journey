@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const validationSchema = Yup.object({
   email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string().min(6, "Min 6 chars").required("Password is required"),
+  password: Yup.string().min(7, "Minimum 7 characters").required("Password is required"),
 });
 
 export default function Login() {
