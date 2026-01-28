@@ -37,7 +37,7 @@ export default function Login() {
     >
   <Form className={styles.form}>
     <label className={styles.label}>
-      Email
+      Mail
       <Field name="email" type="email" className={styles.input} placeholder="Your@email.com"/>
       <ErrorMessage name="email" component="p" />
     </label>
