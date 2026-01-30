@@ -2,7 +2,7 @@ export default function RecommendedBookCard({ book }) {
   return (
     <li>
       <img
-        src={book.image}
+        src={book.imageUrl}
         alt={book.title}
         width="120"
       />
