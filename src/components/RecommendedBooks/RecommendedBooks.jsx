@@ -6,6 +6,9 @@ export default function RecommendedBooks() {
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const handlePrev = () => {
     if (page > 1) {
@@ -33,10 +36,15 @@ export default function RecommendedBooks() {
     fetchBooks()
 }, [page]);
 
+  const handleBookClick = book => {
+  setSelectedBook(book);
+  setIsModalOpen(true);
+  };
+
 
   return (
     <section>
-      <h1>Recommended</h1>
+      <h2>Recommended</h2>
       <button onClick={handlePrev} disabled={page === 1}>
         ← Prev
       </button>
@@ -46,7 +54,7 @@ export default function RecommendedBooks() {
       </button>
       <ul>
         {books.map(book => (
-          <RecommendedBookCard key={book._id} book={book} />
+          <RecommendedBookCard key={book._id} book={book} onBookClick={handleBookClick}/>
         ))}
       </ul>
     </section>
