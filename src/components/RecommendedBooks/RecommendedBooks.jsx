@@ -1,4 +1,5 @@
 import { getRecommendedBooks } from "../../api/books";
+import BookModal from "../BookModal/BookModal";
 import RecommendedBookCard from "../RecommendedBookCard/RecommendedBookCard";
 import { useState, useEffect } from "react";
 
@@ -7,7 +8,6 @@ export default function RecommendedBooks() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [selectedBook, setSelectedBook] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
 
   const handlePrev = () => {
@@ -38,9 +38,12 @@ export default function RecommendedBooks() {
 
   const handleBookClick = book => {
   setSelectedBook(book);
-  setIsModalOpen(true);
   };
-
+  const closeModal = () => {
+    setSelectedBook(null);
+    console.log("Modal closed");
+    
+  };
 
   return (
     <section>
@@ -57,6 +60,8 @@ export default function RecommendedBooks() {
           <RecommendedBookCard key={book._id} book={book} onBookClick={handleBookClick}/>
         ))}
       </ul>
+
+      {selectedBook && (<BookModal book={selectedBook} onClose={closeModal} />)}
     </section>
   );
 }
