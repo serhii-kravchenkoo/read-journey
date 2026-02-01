@@ -7,3 +7,8 @@ export const getRecommendedBooks = async (page, limit = 10) => {
 
   return response.data;
 };
+
+export const addBookFromRecommend = async bookId => {
+  const response = await api.post(`/books/add/${bookId}`);
+  return response.data;
+};
