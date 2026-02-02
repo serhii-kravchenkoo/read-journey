@@ -18,8 +18,8 @@ const Header = () => {
   return (
       <header>
           <nav>
-            <NavLink to="/recommended">Recommended</NavLink>
-            <NavLink to="/library">Library</NavLink>
+            <NavLink to="/recommended">Home</NavLink>
+            <NavLink to="/library">My library</NavLink>
           </nav>
           <button onClick={handleLogout}>Log out</button>
     </header>

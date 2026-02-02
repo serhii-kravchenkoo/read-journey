@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { addBookFromRecommend } from "../../api/books";
 
 const modalRoot = document.getElementById("modal-root");
 
 export default function BookModal({ book, onClose }) {
+
+  const [alreadyAdded, setAlreadyAdded] = useState(false);
+
   useEffect(() => {
     const handleEsc = e => {
       if (e.key === "Escape") {
@@ -22,7 +25,7 @@ export default function BookModal({ book, onClose }) {
     onClose();
   } catch (error) {
     if (error.response?.status === 409) {
-      alert("Ця книга вже є у бібліотеці");
+      setAlreadyAdded(true);
     } else {
       console.error(error);
     }
@@ -48,7 +51,7 @@ export default function BookModal({ book, onClose }) {
         <button onClick={onClose}>X</button>
         <h2>{book.title}</h2>
         <p>{book.author}</p>
-        <button onClick={handleAddToLibrary}>Add to library</button>
+        <button onClick={handleAddToLibrary} disabled={alreadyAdded}> {alreadyAdded ? "Already in library" : "Add to library"}</button>
       </div>
     </div>,
     modalRoot
