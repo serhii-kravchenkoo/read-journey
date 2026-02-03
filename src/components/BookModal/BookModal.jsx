@@ -6,8 +6,6 @@ const modalRoot = document.getElementById("modal-root");
 
 export default function BookModal({ book, onClose, alreadyAdded }) {
 
-
-
   useEffect(() => {
     const handleEsc = e => {
       if (e.key === "Escape") {
