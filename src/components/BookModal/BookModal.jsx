@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { addBookFromRecommend } from "../../api/books";
 
 const modalRoot = document.getElementById("modal-root");
 
-export default function BookModal({ book, onClose }) {
+export default function BookModal({ book, onClose, alreadyAdded }) {
 
-  const [alreadyAdded, setAlreadyAdded] = useState(false);
+
 
   useEffect(() => {
     const handleEsc = e => {
@@ -21,11 +21,11 @@ export default function BookModal({ book, onClose }) {
 
   const handleAddToLibrary = async () => {
   try {
-    await addBookFromRecommend(book._id);
-    onClose();
+    const addedBook = await addBookFromRecommend(book._id);
+    onClose(addedBook);
   } catch (error) {
-    if (error.response?.status === 409) {
-      setAlreadyAdded(true);
+    if (error) {
+      console.log("Error", error);
     } else {
       console.error(error);
     }

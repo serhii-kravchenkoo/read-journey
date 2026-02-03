@@ -12,3 +12,11 @@ export const addBookFromRecommend = async bookId => {
   const response = await api.post(`/books/add/${bookId}`);
   return response.data;
 };
+
+export const getOwnBooks = async (status) => {
+  const response = await api.get("/books/own", {
+    params: { status },
+  });
+  
+  return response.data;
+};
