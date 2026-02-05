@@ -3,7 +3,7 @@ import BookModal from "../BookModal/BookModal";
 import RecommendedBookCard from "../RecommendedBookCard/RecommendedBookCard";
 import { useState, useEffect } from "react";
 
-export default function RecommendedBooks() {
+export default function RecommendedBooks({filters}) {
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -26,7 +26,7 @@ export default function RecommendedBooks() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const data = await getRecommendedBooks(page, 10);
+        const data = await getRecommendedBooks(page, 10, filters);
 
         setBooks(data.results);
         setTotalPages(data.totalPages);
@@ -35,31 +35,34 @@ export default function RecommendedBooks() {
     }
     }
     fetchBooks()
-}, [page]);
+}, [page, filters]);
 
-  const handleBookClick = book => {
-  setSelectedBook(book);
-  };
-  const closeModal = (addedBook) => {
-    if (addedBook) {
-    setOwnBooks(prev => [...prev, addedBook]);
-  }
-    setSelectedBook(null);
-    console.log("Modal closed");
-    };
-
-  useEffect(() => {
-  const fetchOwnBooks = async () => {
+  const handleBookClick = async book => {
+    setSelectedBook(book);
     try {
       const data = await getOwnBooks();
       setOwnBooks(data);
-    } catch (error) {
-      console.log("Fetch own books error!!!!!!!!!!!!", error);
+    } catch (e) {
+    console.log("Failed to refresh ownBooks", e);
     }
   };
+  
+  const closeModal = () => {
+    setSelectedBook(null);
+    };
 
-  fetchOwnBooks();
-  }, []);
+  // useEffect(() => {
+  // const fetchOwnBooks = async () => {
+  //   try {
+  //     const data = await getOwnBooks();
+  //     setOwnBooks(data);
+  //   } catch (error) {
+  //     console.log("Fetch own books error!!!!!!!!!!!!", error);
+  //   }
+  // };
+
+  // fetchOwnBooks();
+  // }, []);
 
   const isBookAlreadyAdded = book => {
   return ownBooks.some(

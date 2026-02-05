@@ -18,9 +18,9 @@ export default function BookModal({ book, onClose, alreadyAdded }) {
   }, [onClose]);
 
   const handleAddToLibrary = async () => {
-  try {
-    const addedBook = await addBookFromRecommend(book._id);
-    onClose(addedBook);
+    try {
+      await addBookFromRecommend(book._id);
+      onClose();
   } catch (error) {
     if (error) {
       console.log("Error", error);

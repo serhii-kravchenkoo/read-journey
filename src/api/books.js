@@ -1,8 +1,8 @@
 import { api } from "./api";
 
-export const getRecommendedBooks = async (page, limit = 10) => {
+export const getRecommendedBooks = async (page, limit = 10, filters = {}) => {
   const response = await api.get("/books/recommend", {
-    params: { page, limit },
+    params: { page, limit, ...filters },
   });
 
   return response.data;

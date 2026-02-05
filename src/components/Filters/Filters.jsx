@@ -6,18 +6,15 @@ const validationSchema = Yup.object({
   author: Yup.string(),
 });
 
-export default function Filters() {
+export default function Filters({onSubmit}) {
     return (
         <div>
         <p>Filters:</p>
         <Formik
       initialValues={{ title: "", author: "" }}
       validationSchema={validationSchema}
-      onSubmit={async values => {
-        console.log("filters submit:", values);
-
-        // ТУТ далі:
-        // api.get("/books/recommend", { params: values })
+      onSubmit={values => {
+        onSubmit(values);
       }}
       >
           <Form>
