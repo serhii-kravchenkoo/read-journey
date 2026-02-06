@@ -12,7 +12,7 @@ export default function Recommended() {
   return (
     <section>
       <Dashboard>
-        <Filters onSubmit={setFilters } />
+        <Filters onSubmit={(values) => {setFilters(values);}}/>
         <Description />
         <Quote/>
       </Dashboard>

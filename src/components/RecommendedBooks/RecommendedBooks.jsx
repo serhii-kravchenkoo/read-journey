@@ -1,7 +1,7 @@
 import { getRecommendedBooks, getOwnBooks } from "../../api/books";
 import BookModal from "../BookModal/BookModal";
 import RecommendedBookCard from "../RecommendedBookCard/RecommendedBookCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 
 export default function RecommendedBooks({filters}) {
   const [books, setBooks] = useState([]);
@@ -9,7 +9,7 @@ export default function RecommendedBooks({filters}) {
   const [totalPages, setTotalPages] = useState(1);
   const [selectedBook, setSelectedBook] = useState(null);
   const [ownBooks, setOwnBooks] = useState([]);
-
+  
 
   const handlePrev = () => {
     if (page > 1) {
@@ -23,6 +23,11 @@ export default function RecommendedBooks({filters}) {
     }
   };
   
+useEffect(() => {
+  setPage(1);
+}, [filters]);
+
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -50,19 +55,6 @@ export default function RecommendedBooks({filters}) {
   const closeModal = () => {
     setSelectedBook(null);
     };
-
-  // useEffect(() => {
-  // const fetchOwnBooks = async () => {
-  //   try {
-  //     const data = await getOwnBooks();
-  //     setOwnBooks(data);
-  //   } catch (error) {
-  //     console.log("Fetch own books error!!!!!!!!!!!!", error);
-  //   }
-  // };
-
-  // fetchOwnBooks();
-  // }, []);
 
   const isBookAlreadyAdded = book => {
   return ownBooks.some(
