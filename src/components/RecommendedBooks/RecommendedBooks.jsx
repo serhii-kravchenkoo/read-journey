@@ -26,8 +26,7 @@ export default function RecommendedBooks({filters}) {
 useEffect(() => {
   setPage(1);
 }, [filters]);
-
-
+  
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -51,7 +50,6 @@ useEffect(() => {
     console.log("Failed to refresh ownBooks", e);
     }
   };
-  
   const closeModal = () => {
     setSelectedBook(null);
     };
