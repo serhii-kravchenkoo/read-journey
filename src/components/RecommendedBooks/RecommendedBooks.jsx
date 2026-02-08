@@ -1,5 +1,6 @@
 import { getRecommendedBooks, getOwnBooks } from "../../api/books";
 import BookModal from "../BookModal/BookModal";
+import Loader from "../Loader/Loader";
 import RecommendedBookCard from "../RecommendedBookCard/RecommendedBookCard";
 import { useState, useEffect} from "react";
 
@@ -9,6 +10,7 @@ export default function RecommendedBooks({filters}) {
   const [totalPages, setTotalPages] = useState(1);
   const [selectedBook, setSelectedBook] = useState(null);
   const [ownBooks, setOwnBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
   
 
   const handlePrev = () => {
@@ -30,12 +32,15 @@ useEffect(() => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
+        setLoading(true);
         const data = await getRecommendedBooks(page, 10, filters);
 
         setBooks(data.results);
         setTotalPages(data.totalPages);
       } catch (error) {
         console.log("Fetch recommended error", error);
+      } finally {
+      setLoading(false);
     }
     }
     fetchBooks()
@@ -49,7 +54,8 @@ useEffect(() => {
     } catch (e) {
     console.log("Failed to refresh ownBooks", e);
     }
-  };
+  }
+  
   const closeModal = () => {
     setSelectedBook(null);
     };
@@ -64,6 +70,7 @@ useEffect(() => {
   return (
     <section>
       <h2>Recommended</h2>
+      {loading && <Loader />}
       <button onClick={handlePrev} disabled={page === 1}>
         ← Prev
       </button>
