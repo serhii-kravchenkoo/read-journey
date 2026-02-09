@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { deleteOwnBook, getOwnBooks } from "../../api/books";
 import Loader from "../Loader/Loader";
 import MyLibraryBookCard from "../MyLibraryBookCard/MyLibraryBookCard";
+import ModalBook from "../ModalBook/ModalBook";
 
 export default function MyLibraryBooks() {
   

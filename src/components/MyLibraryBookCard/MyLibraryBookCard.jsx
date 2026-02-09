@@ -3,7 +3,7 @@ export default function MyLibraryBookCard({book, onDelete, onOpen}) {
     <li>
 
       <img
-        src={book.image}
+        src={book.imageUrl}
         alt={book.title}
         onClick={() => onOpen(book)}
       />
