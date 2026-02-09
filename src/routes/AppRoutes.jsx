@@ -15,6 +15,7 @@ function AppRoutes() {
       <Route element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
         <Route path="/recommended" element={<Recommended />} />
         <Route path="/library" element={<Library />} />
+        
       </Route>
     </Routes>
   );

@@ -1,14 +1,15 @@
 import AddBook from "../../components/AddBook/AddBook";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import MyLibraryBooks from "../../components/MyLibraryBooks/MyLibraryBooks";
-import RecommendedBlock from "../../components/RecommendedBlock/RecommendedBlock";
+import RecommendedPreview from "../../components/RecommendedPreview/RecommendedPreview";
+
 
 function Library() {
   return (
       <section>
       <Dashboard>
         <AddBook />
-        <RecommendedBlock />
+        <RecommendedPreview />
       </Dashboard>
         <MyLibraryBooks />
       </section>

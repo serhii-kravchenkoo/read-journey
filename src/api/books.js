@@ -20,3 +20,10 @@ export const getOwnBooks = async (status) => {
   
   return response.data;
 };
+
+export const deleteOwnBook = async bookId => {
+  const response = await api.delete(`/books/remove/${bookId}`);
+
+  return response.data;
+
+}
