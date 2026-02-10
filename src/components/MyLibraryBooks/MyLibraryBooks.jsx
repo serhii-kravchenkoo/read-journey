@@ -4,7 +4,7 @@ import Loader from "../Loader/Loader";
 import MyLibraryBookCard from "../MyLibraryBookCard/MyLibraryBookCard";
 import ModalBook from "../ModalBook/ModalBook";
 
-export default function MyLibraryBooks() {
+export default function MyLibraryBooks({ refreshKey }) {
   
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +26,7 @@ export default function MyLibraryBooks() {
           }
         };
     fetchOwnBooks();
-    }, [status]);
+    }, [status, refreshKey]);
 
   const handleDelete = async (id) => {
   try {

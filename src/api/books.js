@@ -26,4 +26,9 @@ export const deleteOwnBook = async bookId => {
 
   return response.data;
 
+};
+
+export const addOwnBook = async ({ title, author, totalPages }) => {
+  const response = await api.post(`/books/add`, { title, author, totalPages });
+  return response.data;
 }
