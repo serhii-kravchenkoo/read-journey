@@ -31,4 +31,26 @@ export const deleteOwnBook = async bookId => {
 export const addOwnBook = async ({ title, author, totalPages }) => {
   const response = await api.post(`/books/add`, { title, author, totalPages });
   return response.data;
-}
+};
+
+export const startReading = async ({bookId, page}) => {
+  const response = await api.post("/books/reading/start", {bookId, page});
+  return response.data;
+};
+
+export const finishReading = async ({bookId, page}) => {
+  const response = await api.post("/books/reading/finish", {bookId, page});
+  return response.data;
+};
+
+export const deleteReading = async (bookId, readingId) => {
+  const response = await api.delete("/books/reading", {
+    params: { bookId, readingId },
+  });
+  return response.data;
+};
+
+export const getBookById = async (bookId) => {
+  const response = await api.get(`/books/${bookId}`);
+  return response.data;
+};
