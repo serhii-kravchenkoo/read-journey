@@ -3,6 +3,7 @@ import { deleteOwnBook, getOwnBooks } from "../../api/books";
 import Loader from "../Loader/Loader";
 import MyLibraryBookCard from "../MyLibraryBookCard/MyLibraryBookCard";
 import ModalBook from "../ModalBook/ModalBook";
+import css from "./MyLibraryBooks.module.css"
 
 export default function MyLibraryBooks({ refreshKey }) {
   
@@ -61,10 +62,14 @@ export default function MyLibraryBooks({ refreshKey }) {
           <option value="">All books</option>
         </select>
 
-         {loading ? (<Loader />) : (
-        <ul>
-          {books.map(book => (<MyLibraryBookCard key={book._id} book={book} onDelete={handleDelete} onOpen={handleOpenModal}/>))}
-        </ul> )};
+        {loading ? (<Loader />) : books.length === 0 ? (
+          <div className={css.empty}>
+            <div className={css.emptyIcon}>📚</div>
+            <p className={css.emptyText}>To start training, add some of your books or from the recommended ones</p>
+          </div>) : (
+            <ul>
+            {books.map(book => (<MyLibraryBookCard key={book._id} book={book} onDelete={handleDelete} onOpen={handleOpenModal} />))}
+          </ul>)}
         {selectedBook && (<ModalBook book={selectedBook} onClose={handleCloseModal}/>)}
       </section>
       

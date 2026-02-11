@@ -1,0 +1,51 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal {
+    position: relative;
+    width: 420px;
+    padding: 40px 32px;
+    border-radius: 20px;
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.text {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+}
+
+.text span {
+    color: white;
+    font-weight: 500;
+}
