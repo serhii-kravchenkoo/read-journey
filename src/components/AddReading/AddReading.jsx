@@ -9,7 +9,7 @@ const validationSchema = Yup.object({
     .min(1, "Page must be > 0"),
 });
 
-export default function AddReading({bookId, isReading, setIsReading,}) {
+export default function AddReading({bookId, isReading, setIsReading, refreshBook,}) {
 
     const handleSubmit = async (values, { resetForm }) => {
 
@@ -17,16 +17,17 @@ export default function AddReading({bookId, isReading, setIsReading,}) {
     setIsReading(true);
 
     } else {await finishReading({bookId, page: Number(values.page),});
-    setIsReading(false);}
-
-    resetForm();
+        setIsReading(false);
+        await refreshBook()
+    }
+        resetForm();
 
     } catch (error) {
 
       // тут потім поставимо notification
       alert("Server error");
       console.log(error);
-    }
+        }
   };
 
   return (
