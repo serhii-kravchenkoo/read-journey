@@ -26,12 +26,12 @@ export const addOwnBook = async ({ title, author, totalPages }) => {
 };
 
 export const startReading = async ({bookId, page}) => {
-  const response = await api.post("/books/reading/start", {bookId, page});
+  const response = await api.post("/books/reading/start", {id: bookId, page});
   return response.data;
 };
 
 export const finishReading = async ({bookId, page}) => {
-  const response = await api.post("/books/reading/finish", {bookId, page});
+  const response = await api.post("/books/reading/finish", {id: bookId, page});
   return response.data;
 };
 
