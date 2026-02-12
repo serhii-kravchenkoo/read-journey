@@ -1,10 +1,7 @@
 import { api } from "./api";
 
 export const getRecommendedBooks = async (page, limit = 10, filters = {}) => {
-  const response = await api.get("/books/recommend", {
-    params: { page, limit, ...filters },
-  });
-
+  const response = await api.get("/books/recommend", {params: { page, limit, ...filters },});
   return response.data;
 };
 
@@ -14,18 +11,13 @@ export const addBookFromRecommend = async bookId => {
 };
 
 export const getOwnBooks = async (status) => {
-  const response = await api.get("/books/own", {
-    params: { status },
-  });
-  
+  const response = await api.get("/books/own", {params: { status },});
   return response.data;
 };
 
 export const deleteOwnBook = async bookId => {
   const response = await api.delete(`/books/remove/${bookId}`);
-
   return response.data;
-
 };
 
 export const addOwnBook = async ({ title, author, totalPages }) => {
@@ -44,9 +36,7 @@ export const finishReading = async ({bookId, page}) => {
 };
 
 export const deleteReading = async (bookId, readingId) => {
-  const response = await api.delete("/books/reading", {
-    params: { bookId, readingId },
-  });
+  const response = await api.delete("/books/reading", {params: { bookId, readingId },});
   return response.data;
 };
 
