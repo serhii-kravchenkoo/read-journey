@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react"
 import MyBook from "../../components/MyBook/MyBook";
 import { getBookById } from "../../api/books";
 import AddReading from "../../components/AddReading/AddReading";
+import Details from "../../components/Details/Details";
+import ReadingProgress from "../../components/ReadingProgress.jsx/ReadingProgress";
 
 export default function Reading() {
 
@@ -27,12 +29,12 @@ export default function Reading() {
 useEffect(() => {
   fetchBook();
 }, [fetchBook]);
-
+  
   return (
     <section>
           <Dashboard>
-            <AddReading bookId={id} isReading={isReading} setIsReading={setIsReading} refreshBook={fetchBook}/>
-            {/* <Details /> */}
+        <AddReading bookId={id} isReading={isReading} setIsReading={setIsReading} refreshBook={fetchBook} />
+        {book?.progress && book.progress.length > 0 ? (<Details book={book} />) : (<ReadingProgress/>)} 
           </Dashboard>
       <MyBook book={ book} loading={loading}/>
     </section>

@@ -1,0 +1,9 @@
+.bgCircle {
+    stroke: var(--dark-secondary);
+    fill: none;
+}
+
+.activeCircle {
+    stroke: var(--accent-secondary);
+    fill: none;
+}
