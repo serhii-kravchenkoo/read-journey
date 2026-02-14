@@ -6,6 +6,7 @@ import { getBookById } from "../../api/books";
 import AddReading from "../../components/AddReading/AddReading";
 import Details from "../../components/Details/Details";
 import ReadingProgress from "../../components/ReadingProgress.jsx/ReadingProgress";
+import FinishModal from "../../components/FinishModal/FinishModal";
 
 export default function Reading() {
 
@@ -13,12 +14,13 @@ export default function Reading() {
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isReading, setIsReading] = useState(false);
-  // const [showFinishModal, setShowFinishModal] = useState(false);
+  const [showFinishModal, setShowFinishModal] = useState(false);
 
   const fetchBook = useCallback (async () => {
   try {
     const data = await getBookById(id);
     setBook(data);
+    if (data.status === "done") {setShowFinishModal(true);}
   } catch (error) {
     console.log(error);
   } finally {
@@ -36,7 +38,8 @@ useEffect(() => {
         <AddReading bookId={id} isReading={isReading} setIsReading={setIsReading} refreshBook={fetchBook} />
         {book?.progress && book.progress.length > 0 ? (<Details book={book} />) : (<ReadingProgress/>)} 
           </Dashboard>
-      <MyBook book={ book} loading={loading}/>
+      <MyBook book={book} loading={loading} />
+      {showFinishModal && (<FinishModal onClose={() => setShowFinishModal(false)} />)}
     </section>
   )
 }

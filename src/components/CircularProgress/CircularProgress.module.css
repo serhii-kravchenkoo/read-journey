@@ -1,4 +1,4 @@
-.bgCircle {
+/* .bgCircle {
     stroke: var(--dark-secondary);
     fill: none;
 }
@@ -6,4 +6,19 @@
 .activeCircle {
     stroke: var(--accent-secondary);
     fill: none;
+} */
+
+
+.bgCircle {
+    fill: none;
+    /* щоб не заливало всередину */
+    stroke: #333;
+    /* колір фону кола */
+}
+
+.activeCircle {
+    fill: none;
+    stroke: #4ade80;
+    /* зелена дуга */
+    transition: stroke-dashoffset 0.5s ease;
 }
