@@ -1,8 +1,9 @@
 import { useState } from "react";
 import RisingSpeedGraph from "../RisingSpeedGraph/RisingSpeedGraph";
 import CircularProgress from "../CircularProgress/CircularProgress";
+import { deleteReading } from "../../api/books";
 
-export default function Details({ book }) {
+export default function Details({ book, refreshBook }) {
 
   const [activeTab, setActiveTab] = useState("diary");
 
@@ -27,7 +28,18 @@ export default function Details({ book }) {
         Number(((totalPagesRead / book.totalPages) * 100).toFixed(2))
       )
     : 0;
-
+  const handleDeleteSession = async (sessionId) => {
+    try {
+      await deleteReading(book._id, sessionId);
+      // alert("Session deleted!");
+      if (refreshBook) await refreshBook();  // підтягуємо свіжі дані з сервера
+    } catch (err) {
+      console.error(err);
+      alert("Цю книгу вже прочитано, тому сесії видалити не можна.");
+    }
+  };
+  
+  
   /* =========================
      RENDER
   ========================= */
@@ -102,6 +114,9 @@ export default function Details({ book }) {
                     speed={session.speed}
                     maxSpeed={100}
                   />
+                  <button onClick={() => handleDeleteSession(session._id)}>
+                    Delete
+                  </button>
                   <div>
                     {session.speed} pages per hour
                   </div>

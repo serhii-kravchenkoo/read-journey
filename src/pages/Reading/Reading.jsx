@@ -36,7 +36,7 @@ useEffect(() => {
     <section>
           <Dashboard>
         <AddReading bookId={id} isReading={isReading} setIsReading={setIsReading} refreshBook={fetchBook} />
-        {book?.progress && book.progress.length > 0 ? (<Details book={book} />) : (<ReadingProgress/>)} 
+        {book?.progress && book.progress.length > 0 ? (<Details book={book} refreshBook={fetchBook}/>) : (<ReadingProgress/>)} 
           </Dashboard>
       <MyBook book={book} loading={loading} />
       {showFinishModal && (<FinishModal onClose={() => setShowFinishModal(false)} />)}
