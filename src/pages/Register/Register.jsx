@@ -5,6 +5,7 @@ import { signupUser } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),

@@ -1,75 +1,80 @@
-/* Повний екран overlay */
-.mobile-menu-overlay {
+.overlay {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    /* напівпрозорий фон */
     opacity: 0;
     visibility: hidden;
     z-index: 40;
     transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
-.mobile-menu-overlay.open {
+.open {
     opacity: 1;
     visibility: visible;
 }
 
-/* Панель меню справа */
-.mobile-menu-panel {
+.mobileMenuPanel {
     position: fixed;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 70%;
+    /* можна 50-70% */
     height: 100%;
     background-color: #2a2a2a;
-    /* темно-сірий фон */
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
     z-index: 50;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    transform: translateX(100%);
-    transition: transform 0.35s ease;
 }
 
-.mobile-menu-panel.open {
+.openPanel {
     transform: translateX(0);
 }
 
-/* Кнопка закриття */
-.close-btn {
+.closeBtn {
     position: absolute;
     top: 34px;
     right: 40px;
-    background: none;
-    border: none;
     cursor: pointer;
+    color: black
 }
 
-/* Контент меню */
-.menu-content {
-    flex-grow: 1;
+.closeIcon {
+    color: #f9f9f9;
+}
+
+
+.nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
     align-items: center;
 }
 
-/* Кнопка Log out */
-.logout-btn {
-    height: 38px !important;
-    padding: 0 20px !important;
-    margin-bottom: 20px;
+.active {
+    font-weight: bold;
+    color: #fff;
 }
 
-/* Сховати на планшет/десктоп */
+.logoutBtn {
+    height: 38px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
-    .mobile-menu-overlay {
+    .overlay {
         display: none;
     }
 }

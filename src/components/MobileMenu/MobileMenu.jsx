@@ -1,34 +1,31 @@
-
-import Navigation from "../Navigation/Navigation";
+import { NavLink } from "react-router-dom";
+import css from "./MobileMenu.module.css";
 
 const MobileMenu = ({ isOpen, toggleMenu, handleLogOut }) => {
   return (
     <div
-      className={clsx("mobile-menu-overlay", isOpen && "open")}
+      className={`${css.overlay} ${isOpen ? css.open : ""}`}
       onClick={toggleMenu} // закриваємо меню при кліку на overlay
     >
       <div
-        className={clsx("mobile-menu-panel", isOpen && "open")}
+        className={`${css.mobileMenuPanel} ${isOpen ? css.openPanel : ""}`}
         onClick={(e) => e.stopPropagation()} // запобігаємо закриттю при кліку всередині
       >
         {/* Кнопка закриття */}
-        <button className="close-btn" onClick={toggleMenu}>
-          <Icon w={28} iconName="icon-close-menu" />
+        <button className={css.closeBtn} onClick={toggleMenu}>X
+          {/* <svg className={css.closeIcon} width="14" height="14">
+          <use href="/sprite.svg#icon-close-menu" />
+        </svg> */}
         </button>
 
         {/* Навігація */}
-        <div className="menu-content">
-          <Navigation />
-        </div>
+        <nav className={css.nav}>
+        <NavLink to="/recommended" className={({ isActive }) => isActive ? css.active : ""} onClick={toggleMenu}>Home</NavLink>
+        <NavLink to="/library" className={({ isActive }) => isActive ? css.active : ""} onClick={toggleMenu}>My library</NavLink>
+      </nav>
 
         {/* Кнопка виходу */}
-        <Button
-          type="button"
-          primary={false}
-          title="Log out"
-          className="logout-btn"
-          onClick={handleLogOut}
-        />
+        <button className={css.logoutBtn} onClick={handleLogOut}>Log out</button>
       </div>
     </div>
   );

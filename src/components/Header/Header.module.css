@@ -1,11 +1,11 @@
-.logo-icon {
+.logoIcon {
     fill: #ffffff;
     /* light-white */
     width: 42px;
     height: 17px;
 }
 
-.logo-text {
+.logoText {
     display: none;
     font-family: "Gilroy", sans-serif;
     font-weight: 700;
@@ -14,4 +14,93 @@
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.36px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    position: relative;
+}
+
+/* Лого */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoText {
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* Навігація */
+.mainNav {
+    display: flex;
+    gap: 20px;
+}
+
+.mainNav a {
+    color: white;
+    text-decoration: none;
+}
+
+.mainNav a.active {
+    font-weight: bold;
+}
+
+/* Кнопка Log out */
+.logout {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+/* Кнопка бургер */
+.burger {
+    display: none;
+    /* схована на десктоп/планшет */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* --- Адаптивність --- */
+/* Мобільні - до 767px */
+@media (max-width: 767px) {
+
+    .mainNav,
+    .logout {
+        display: none;
+        /* ховаємо навігацію і logout */
+    }
+
+    .burger {
+        display: block;
+        /* показуємо кнопку ☰ */
+    }
+}
+
+/* Планшет і десктоп - від 768px */
+@media (min-width: 768px) {
+
+    .mainNav,
+    .logout {
+        display: flex;
+        /* показуємо навігацію і logout */
+    }
+
+    .burger {
+        display: none;
+        /* ховаємо кнопку ☰ */
+    }
 }

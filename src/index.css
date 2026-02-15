@@ -1,0 +1,79 @@
+body {
+    font-family: var(--font-inter), sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f3f9ed;
+    color: #000;
+}
+
+.pageMain {
+    flex: 1;
+}
+
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-nunito-sans), sans-serif;
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    font-family: inherit;
+    color: currentColor;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (min-width: 375px) {
+    .container {
+        max-width: 375px;
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+        padding: 0 32px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding: 0 64px;
+    }
+}

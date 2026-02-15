@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Recommended from "../pages/Recommended/Recommended";
@@ -12,6 +12,7 @@ import Reading from "../pages/Reading/Reading";
 function AppRoutes() {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/register" replace />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
