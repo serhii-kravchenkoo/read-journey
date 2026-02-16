@@ -15,10 +15,14 @@ const Register = () => {
   const navigate = useNavigate();
   
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.card}>
-        <h1 className={styles.title}>Expand your mind, reading a book</h1>
-
+    <section>
+      <div className={styles.register}>
+        
+          <svg className={styles.logoIcon} width="42" height="17">
+            <use href="/icons.svg#icon-logo"></use>
+        </svg>
+        
+        <h1 className={styles.title}>Expand your mind, reading <span className={styles.span}>a book</span></h1>
         <Formik
   initialValues={{ name: "", email: "", password: "" }}
   validationSchema={validationSchema}
@@ -63,6 +67,9 @@ const Register = () => {
         </Formik>
         
         <Link to="/login" className={styles.link}>Already have an account? </Link>
+      </div>
+      <div>
+
       </div>
     </section>
   );
