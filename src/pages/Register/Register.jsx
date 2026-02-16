@@ -17,11 +17,9 @@ const Register = () => {
   return (
     <section>
       <div className={styles.register}>
-        
           <svg className={styles.logoIcon} width="42" height="17">
             <use href="/icons.svg#icon-logo"></use>
-        </svg>
-        
+          </svg>
         <h1 className={styles.title}>Expand your mind, reading <span className={styles.span}>a book</span></h1>
         <Formik
   initialValues={{ name: "", email: "", password: "" }}
@@ -41,34 +39,50 @@ const Register = () => {
     }
   }}
 >
-  <Form className={styles.form}>
-    <label className={styles.label}>
-      Name
-      <Field name="name" type="text" className={styles.input} placeholder="Ilona Ratushniak"/>
-      <ErrorMessage name="name" component="p" />
-    </label>
+          <Form className={styles.form}>
+            <label className={styles.label}>
+              <div className={styles.inputWrapper}>
+                <span className={styles.inputLabel}>Name:</span>
+                <Field name="name" type="text" className={styles.input} placeholder="Ilona Ratushniak" />
+              </div>
+              <ErrorMessage name="name" component="p" />
+            </label>
+            
+  <label className={styles.label}>
+    <div className={styles.inputWrapper}>
+      <span className={styles.inputLabel}>Mail:</span>
+      <Field
+        name="email"
+        type="email"
+        className={styles.input}
+        placeholder="Your@email.com"
+      />
+    </div>
+    <ErrorMessage name="email" component="p" />
+  </label>
 
-    <label className={styles.label}>
-      Email
-      <Field name="email" type="email" className={styles.input} placeholder="Your@email.com"/>
-      <ErrorMessage name="email" component="p" />
-    </label>
-
-    <label className={styles.label}>
-      Password
-      <Field name="password" type="password" className={styles.input} placeholder="Yourpasswordhere"/>
-      <ErrorMessage name="password" component="p" />
-    </label>
-
-    <button type="submit" className={styles.button}>
+  <label className={styles.label}>
+    <div className={styles.inputWrapper}>
+      <span className={styles.inputLabel}>Password:</span>
+      <Field
+        name="password"
+        type="password"
+        className={styles.input}
+        placeholder="Yourpasswordhere"
+      />
+    </div>
+    <ErrorMessage name="password" component="p" />
+            </label>
+            <div className={styles.buttonWrapper}>
+                  <button type="submit" className={styles.button}>
       Registration
-    </button>
+            </button>
+            <Link to="/login" className={styles.link}>Already have an account? </Link>
+            </div>
+
   </Form>
         </Formik>
         
-        <Link to="/login" className={styles.link}>Already have an account? </Link>
-      </div>
-      <div>
 
       </div>
     </section>
