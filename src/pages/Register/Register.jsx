@@ -4,7 +4,8 @@ import * as Yup from "yup";
 import { signupUser } from "../../api/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import phone1x from "../../img/iphone-mobile@1x.png";
+import phone2x from "../../img/iphone-mobile@2x.png";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -15,7 +16,7 @@ const Register = () => {
   const navigate = useNavigate();
   
   return (
-    <section>
+    <section className={styles.section}>
       <div className={styles.register}>
           <svg className={styles.logoIcon} width="42" height="17">
             <use href="/icons.svg#icon-logo"></use>
@@ -79,11 +80,16 @@ const Register = () => {
             </button>
             <Link to="/login" className={styles.link}>Already have an account? </Link>
             </div>
-
   </Form>
         </Formik>
-        
-
+      </div>
+      <div className={styles.phone}>
+        <img
+  src={phone1x}
+  srcSet={`${phone1x} 1x, ${phone2x} 2x`}
+  alt="phone"
+  className={styles.phoneImg}
+/>
       </div>
     </section>
   );

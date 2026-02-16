@@ -6,14 +6,30 @@
     justify-content: center;
 } */
 
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    gap: 10px;
+}
+
 .register {
     width: 100%;
     max-width: 335px;
     padding: 20px;
     border-radius: 30px;
     background: #1f1f1f;
-
 }
+
+.phone {
+    width: 100%;
+    max-width: 335px;
+    padding: 20px 40px 0 40px;
+    border-radius: 30px;
+    background: #1f1f1f;
+}
+
 
 .logoIcon {
     fill: FFFFFF;
@@ -48,7 +64,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-size: 14px;
+    font-size: 12px;
     color: #686868;
 }
 
@@ -69,7 +85,8 @@
     color: #686868;
     white-space: nowrap;
     /* щоб не переносився */
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 /* сам input */
@@ -81,7 +98,8 @@
     /* не перекриває фон wrapper */
     color: #f9f9f9;
     outline: none;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 500;
     height: 100%;
 }
 
