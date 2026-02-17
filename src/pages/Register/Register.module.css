@@ -54,6 +54,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+
 }
 
 /* label для форми */
@@ -114,6 +115,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto;
 
 
 }
@@ -271,5 +273,6 @@
 
     .title {
         margin-top: 107px;
+        line-height: 0.9375;
     }
 }

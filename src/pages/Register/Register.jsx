@@ -22,7 +22,7 @@ const Register = () => {
       <div className={styles.register}>
 
         <div className={styles.logoWrapper}>
-                  <svg className={styles.logoIcon} width="42" height="17">
+        <svg className={styles.logoIcon} width="42" height="17">
         <use href="/icons.svg#icon-logo"></use>
         </svg>
         <span className={styles.logoSpan}>READ JOURNEY</span>
@@ -54,7 +54,7 @@ const Register = () => {
                 <span className={styles.inputLabel}>Name:</span>
                 <Field name="name" type="text" className={styles.input} placeholder="Ilona Ratushniak" />
               </div>
-              <ErrorMessage name="name" component="p" />
+              {/* <ErrorMessage name="name" component="p" /> */}
             </label>
             
   <label className={styles.label}>
@@ -67,7 +67,7 @@ const Register = () => {
         placeholder="Your@email.com"
       />
     </div>
-    <ErrorMessage name="email" component="p" />
+    {/* <ErrorMessage name="email" component="p" /> */}
   </label>
 
   <label className={styles.label}>
@@ -80,7 +80,7 @@ const Register = () => {
         placeholder="Yourpasswordhere"
       />
     </div>
-    <ErrorMessage name="password" component="p" />
+    {/* <ErrorMessage name="password" component="p" /> */}
             </label>
             <div className={styles.buttonWrapper}>
                   <button type="submit" className={styles.button}>
@@ -113,3 +113,4 @@ const Register = () => {
 };
 
 export default Register;
+
