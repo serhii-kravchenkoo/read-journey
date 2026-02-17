@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import phone1x from "../../img/iphone-mobile@1x.png";
 import phone2x from "../../img/iphone-mobile@2x.png";
+import phoneDesktop1x from "../../img/iphone-desctop@1x.png"
+import phoneDesktop2x from "../../img/iphone-desctop@2x.png"
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -18,10 +20,16 @@ const Register = () => {
   return (
     <section className={styles.section}>
       <div className={styles.register}>
-          <svg className={styles.logoIcon} width="42" height="17">
-            <use href="/icons.svg#icon-logo"></use>
-          </svg>
-        <h1 className={styles.title}>Expand your mind, reading <span className={styles.span}>a book</span></h1>
+
+        <div className={styles.logoWrapper}>
+                  <svg className={styles.logoIcon} width="42" height="17">
+        <use href="/icons.svg#icon-logo"></use>
+        </svg>
+        <span className={styles.logoSpan}>READ JOURNEY</span>
+         </div>
+
+
+        <h1 className={styles.title}>Expand your mind, reading <span className={styles.spanTitle}>a book</span></h1>
         <Formik
   initialValues={{ name: "", email: "", password: "" }}
   validationSchema={validationSchema}
@@ -84,13 +92,22 @@ const Register = () => {
         </Formik>
       </div>
       <div className={styles.phone}>
-        <img
-  src={phone1x}
-  srcSet={`${phone1x} 1x, ${phone2x} 2x`}
-  alt="phone"
-  className={styles.phoneImg}
-/>
-      </div>
+  <picture>
+    {/* desktop */}
+    <source 
+      media="(min-width: 1440px)" 
+      srcSet={`${phoneDesktop1x} 1x, ${phoneDesktop2x} 2x`} 
+    />
+
+    {/* tablet/mobile */}
+    <img
+      src={phone1x}
+      srcSet={`${phone1x} 1x, ${phone2x} 2x`}
+      alt="phone"
+      className={styles.phoneImg}
+    />
+  </picture>
+</div>
     </section>
   );
 };
