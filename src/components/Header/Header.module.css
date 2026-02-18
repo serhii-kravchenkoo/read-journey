@@ -1,97 +1,59 @@
-.logoIcon {
-    fill: #ffffff;
-    /* light-white */
-    width: 42px;
-    height: 17px;
-}
-
-.logoText {
-    display: none;
-    font-family: "Gilroy", sans-serif;
-    font-weight: 700;
-    /* bold */
-    font-size: 18px;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.36px;
-}
-
 .header {
+    max-width: 335px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 11px 20px;
     background-color: #1a1a1a;
     color: white;
     position: relative;
+    border-radius: 15px;
 }
 
-/* Лого */
-.logoContainer {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.logoIcon {
+    fill: #f9f9f9;
+    display: inline;
 }
 
-.logoText {
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-
-/* Навігація */
-.mainNav {
-    display: flex;
-    gap: 20px;
-}
-
-.mainNav a {
-    color: white;
-    text-decoration: none;
-}
-
-.mainNav a.active {
-    font-weight: bold;
-}
-
-/* Кнопка Log out */
-.logout {
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 5px 12px;
-    cursor: pointer;
-}
-
-/* Кнопка бургер */
-.burger {
+.logoSpan {
     display: none;
-    /* схована на десктоп/планшет */
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: white;
 }
 
-/* --- Адаптивність --- */
-/* Мобільні - до 767px */
-@media (max-width: 767px) {
-
-    .mainNav,
-    .logout {
-        display: none;
-        /* ховаємо навігацію і logout */
-    }
-
-    .burger {
-        display: block;
-        /* показуємо кнопку ☰ */
-    }
+.logoWrapper {
+    display: flex;
+    gap: 4px;
+    align-items: center;
 }
 
-/* Планшет і десктоп - від 768px */
+.mainNav,
+.logout {
+    display: none;
+    /* ховаємо навігацію і logout */
+}
+
+.burger {
+    display: block;
+    /* показуємо кнопку ☰ */
+}
+
+.userBarBurgerWrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+
+
+
+
 @media (min-width: 768px) {
+
+    .header {
+        max-width: 704px;
+        padding: 16px;
+        justify-content: space-between;
+    }
 
     .mainNav,
     .logout {
@@ -102,5 +64,62 @@
     .burger {
         display: none;
         /* ховаємо кнопку ☰ */
+    }
+
+    /* Навігація */
+    .mainNav {
+        display: flex;
+        gap: 32px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mainNav a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: -0.02em;
+        color: #686868;
+    }
+
+    .mainNav a.active {
+        color: #f9f9f9;
+    }
+
+    /* Кнопка Log out */
+    .logout {
+        background: #262626;
+        border-radius: 30px;
+        border: 1px solid rgba(249, 249, 249, 0.2);
+        color: #f9f9f9;
+        padding: 12px 28px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: 0.02em;
+        height: 42px;
+    }
+
+    .userBarLogoutWrapper {
+        display: flex;
+        gap: 16px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .header {
+        max-width: 1216px;
+    }
+
+    .logoSpan {
+        display: inline;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
     }
 }

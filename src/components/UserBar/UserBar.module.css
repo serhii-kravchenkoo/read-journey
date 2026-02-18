@@ -1,0 +1,43 @@
+.userBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.userAvatar {
+    border-radius: 100%;
+    background: #262626;
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #f9f9f9;
+}
+
+.userName {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .userAvatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (min-width: 1440px) {
+    .userName {
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.125;
+        letter-spacing: -0.02em;
+        color: #f9f9f9;
+    }
+}

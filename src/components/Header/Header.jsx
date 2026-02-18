@@ -1,10 +1,10 @@
-import { signoutUser } from "../../api/auth";
-import { NavLink, useNavigate } from "react-router-dom";
-import UserBar from "../UserBar/UserBar";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import MobileMenu from "../MobileMenu/MobileMenu";
-import css from "./Header.module.css";
+import { signoutUser } from '../../api/auth';
+import { NavLink, useNavigate } from 'react-router-dom';
+import UserBar from '../UserBar/UserBar';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import MobileMenu from '../MobileMenu/MobileMenu';
+import styles from './Header.module.css';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -14,42 +14,54 @@ const Header = () => {
     try {
       await signoutUser();
     } catch (error) {
-      toast.error(error, "Logout failed. Please try again.");
+      toast.error(error, 'Logout failed. Please try again.');
     } finally {
-      localStorage.removeItem("token");
-      navigate("/login");
+      localStorage.removeItem('token');
+      navigate('/login');
       setMenuOpen(false);
     }
   };
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+    setMenuOpen(prev => !prev);
   };
 
   return (
-    <header className={css.header}>
-      <div className={css.logoContainer}>
-        <svg className={css.logoIcon} width="42" height="17">
-          <use href="/sprite.svg#logo" />
+    <header className={styles.header}>
+      <div className={styles.logoWrapper}>
+        <svg className={styles.logoIcon} width="42" height="17">
+          <use href="/icons.svg#icon-logo"></use>
         </svg>
-        <span className={css.logoText}>
-          read journey
-        </span>
+        <span className={styles.logoSpan}>READ JOURNEY</span>
       </div>
 
-        <nav className={css.mainNav}>
-        <NavLink to="/recommended" className={({ isActive }) => isActive ? css.active : ""}>Home</NavLink>
-        <NavLink to="/library" className={({ isActive }) => isActive ? css.active : ""}>My library</NavLink>
+      <nav className={styles.mainNav}>
+        <NavLink
+          to="/recommended"
+          className={({ isActive }) => (isActive ? styles.active : '')}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/library"
+          className={({ isActive }) => (isActive ? styles.active : '')}
+        >
+          My library
+        </NavLink>
       </nav>
 
-      <UserBar/>
-      <button
-        className={css.burger}
-       onClick={toggleMenu}>
-        ☰
-      </button>
-      
-      <button className={css.logout} onClick={handleLogout}>Log out</button>
-      
+      <div className={styles.userBarLogoutWrapper}>
+        <div className={styles.userBarBurgerWrapper}>
+          <UserBar />
+          <button className={styles.burger} onClick={toggleMenu}>
+            <svg className={styles.burgerIcon} width="28" height="28">
+              <use href="/icons.svg#icon-burger-menu"></use>
+            </svg>
+          </button>
+        </div>
+        <button className={styles.logout} onClick={handleLogout}>
+          Log out
+        </button>
+      </div>
       <MobileMenu
         isOpen={menuOpen}
         toggleMenu={toggleMenu}

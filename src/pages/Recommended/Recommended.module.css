@@ -1,0 +1,9 @@
+.section {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px;
+}

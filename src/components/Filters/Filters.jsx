@@ -1,5 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import styles from "./Filters.module.css";
 
 const validationSchema = Yup.object({
   title: Yup.string(),
@@ -8,29 +9,41 @@ const validationSchema = Yup.object({
 
 export default function Filters({onSubmit}) {
     return (
-        <div>
+      <div className={styles.wrapper}>
         <p>Filters:</p>
         <Formik
-      initialValues={{ title: "", author: "" }}
-      validationSchema={validationSchema}
-      onSubmit={values => {
-        onSubmit(values);
-      }}
-      >
+          initialValues={{ title: '', author: '' }}
+          validationSchema={validationSchema}
+          onSubmit={values => {
+            onSubmit(values);
+          }}
+        >
           <Form>
-              <label>Book title:
-          <Field name="title" placeholder="Enter text" />
-          <ErrorMessage name="title" component="p" />
-        </label>
+            <label>
+              Book title:
+              <Field
+                name="title"
+                placeholder="Enter text"
+                className={styles.input}
+              />
+              <ErrorMessage name="title" component="p" />
+            </label>
 
-              <label>The author:
-          <Field name="author" placeholder="Enter text" />
-          <ErrorMessage name="author" component="p" />
-        </label>
+            <label>
+              The author:
+              <Field
+                name="author"
+                placeholder="Enter text"
+                className={styles.input}
+              />
+              <ErrorMessage name="author" component="p" />
+            </label>
 
-        <button type="submit">To apply</button>
-      </Form>
-            </Formik>
-            </div>
-  );
+            <button type="submit" className={styles.btn}>
+              To apply
+            </button>
+          </Form>
+        </Formik>
+      </div>
+    );
 }

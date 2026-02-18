@@ -1,14 +1,17 @@
+import styles from './RecommendedBookCard.module.css';
+
 export default function RecommendedBookCard({ book, onBookClick }) {
   return (
-    <li>
+    <li className={styles.card}>
       <img
+        className={styles.image}
         src={book.imageUrl}
         alt={book.title}
         width="120"
         onClick={() => onBookClick(book)}
       />
-      <h3>{book.title}</h3>
-      <p>{book.author}</p>
+      <h3 className={styles.title}>{book.title}</h3>
+      <p className={styles.author}>{book.author}</p>
     </li>
   );
 }

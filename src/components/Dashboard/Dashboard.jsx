@@ -1,7 +1,5 @@
+import styles from './Dashboard.module.css';
+
 export default function Dashboard({ children }) {
-  return (
-    <aside>
-      {children}
-    </aside>
-  );
+  return <aside className={styles.dashboard}>{children}</aside>;
 }

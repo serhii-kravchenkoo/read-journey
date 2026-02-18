@@ -16,6 +16,7 @@
     --font-family: "Gilroy", sans-serif;
     --second-family: "SF Pro Text", sans-serif;
     --background-color: #141414;
+    --color-text: #f9f9f9;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
+    color: var(--color-text);
 }
 
 img,
@@ -94,3 +96,10 @@ button {
         padding: 0 64px;
     }
 } */
+
+.recommended-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 24px;
+    padding: 24px;
+}

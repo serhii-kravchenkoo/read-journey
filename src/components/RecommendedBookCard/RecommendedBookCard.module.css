@@ -1,0 +1,21 @@
+.card {
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.title {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.author {
+    font-size: 12px;
+    color: #aaa;
+}

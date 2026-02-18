@@ -1,17 +1,17 @@
-import { getRecommendedBooks, getOwnBooks } from "../../api/books";
-import BookModal from "../BookModal/BookModal";
-import Loader from "../Loader/Loader";
-import RecommendedBookCard from "../RecommendedBookCard/RecommendedBookCard";
-import { useState, useEffect} from "react";
+import { getRecommendedBooks, getOwnBooks } from '../../api/books';
+import BookModal from '../BookModal/BookModal';
+import Loader from '../Loader/Loader';
+import RecommendedBookCard from '../RecommendedBookCard/RecommendedBookCard';
+import { useState, useEffect } from 'react';
+import styles from './RecommendedBooks.module.css';
 
-export default function RecommendedBooks({filters}) {
+export default function RecommendedBooks({ filters }) {
   const [books, setBooks] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [selectedBook, setSelectedBook] = useState(null);
   const [ownBooks, setOwnBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-  
 
   const handlePrev = () => {
     if (page > 1) {
@@ -24,11 +24,11 @@ export default function RecommendedBooks({filters}) {
       setPage(prev => prev + 1);
     }
   };
-  
-useEffect(() => {
-  setPage(1);
-}, [filters]);
-  
+
+  useEffect(() => {
+    setPage(1);
+  }, [filters]);
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -38,13 +38,13 @@ useEffect(() => {
         setBooks(data.results);
         setTotalPages(data.totalPages);
       } catch (error) {
-        console.log("Fetch recommended error", error);
+        console.log('Fetch recommended error', error);
       } finally {
-      setLoading(false);
-    }
-    }
-    fetchBooks()
-}, [page, filters]);
+        setLoading(false);
+      }
+    };
+    fetchBooks();
+  }, [page, filters]);
 
   const handleBookClick = async book => {
     setSelectedBook(book);
@@ -52,23 +52,22 @@ useEffect(() => {
       const data = await getOwnBooks();
       setOwnBooks(data);
     } catch (e) {
-    console.log("Failed to refresh ownBooks", e);
+      console.log('Failed to refresh ownBooks', e);
     }
-  }
-  
+  };
+
   const closeModal = () => {
     setSelectedBook(null);
-    };
+  };
 
   const isBookAlreadyAdded = book => {
-  return ownBooks.some(
-    own =>
-      own.title === book.title && own.author === book.author
-  );
-};
+    return ownBooks.some(
+      own => own.title === book.title && own.author === book.author
+    );
+  };
 
   return (
-    <section>
+    <section className={styles.wrapper}>
       <h2>Recommended</h2>
       {loading && <Loader />}
       <button onClick={handlePrev} disabled={page === 1}>
@@ -78,13 +77,23 @@ useEffect(() => {
       <button onClick={handleNext} disabled={page === totalPages}>
         Next →
       </button>
-      <ul>
+      <ul className={styles.list}>
         {books.map(book => (
-          <RecommendedBookCard key={book._id} book={book} onBookClick={handleBookClick}/>
+          <RecommendedBookCard
+            key={book._id}
+            book={book}
+            onBookClick={handleBookClick}
+          />
         ))}
       </ul>
 
-      {selectedBook && (<BookModal book={selectedBook} onClose={closeModal} alreadyAdded={isBookAlreadyAdded(selectedBook)}/>)}
+      {selectedBook && (
+        <BookModal
+          book={selectedBook}
+          onClose={closeModal}
+          alreadyAdded={isBookAlreadyAdded(selectedBook)}
+        />
+      )}
     </section>
   );
 }
