@@ -1,9 +1,63 @@
 .recommendedBooks {
-    display: flex;
     background: #1f1f1f;
-    border-radius: 24px;
-    padding: 24px;
+    border-radius: 30px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 22px;
 }
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f9f9f9;
+
+}
+
+.titleButtonsWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.button {
+    background: transparent;
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    border-radius: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+}
+
+.button:disabled svg {
+    opacity: 0.3;
+}
+
+
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 21px;
+}
+
+
+
+/* 
+
+
 
 .list {
     margin-top: 20px;
@@ -20,4 +74,4 @@
         padding: 40px 40px 28px 40px;
         width: 847px;
     }
-}
+} */

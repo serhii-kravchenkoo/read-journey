@@ -68,23 +68,50 @@ export default function RecommendedBooks({ filters }) {
 
   return (
     <section className={styles.recommendedBooks}>
-      <h2>Recommended</h2>
-      {loading && <Loader />}
-      <button onClick={handlePrev} disabled={page === 1}>
-        ← Prev
-      </button>
+      <div className={styles.titleButtonsWrapper}>
+        <h2 className={styles.title}>Recommended</h2>
+        {loading && <Loader />}
 
-      <button onClick={handleNext} disabled={page === totalPages}>
-        Next →
-      </button>
+        <div className={styles.buttons}>
+          <button
+            className={styles.button}
+            onClick={handlePrev}
+            disabled={page === 1}
+          >
+            <svg className={styles.svg} width="16" height="16">
+              <use href="/public/icons.svg#icon-chevron-left" />
+            </svg>
+          </button>
+
+          <button
+            className={styles.button}
+            onClick={handleNext}
+            disabled={page === totalPages}
+          >
+            <svg className={styles.svg} width="16" height="16">
+              <use href="/public/icons.svg#icon-chevron-right" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
       <ul className={styles.list}>
-        {books.map(book => (
-          <RecommendedBookCard
-            key={book._id}
-            book={book}
-            onBookClick={handleBookClick}
-          />
-        ))}
+        {books
+          .slice(
+            0,
+            window.innerWidth < 768
+              ? 2 // мобільні
+              : window.innerWidth < 1440
+                ? 8 // планшети
+                : 10 // десктоп
+          )
+          .map(book => (
+            <RecommendedBookCard
+              key={book._id}
+              book={book}
+              onBookClick={handleBookClick}
+            />
+          ))}
       </ul>
 
       {selectedBook && (

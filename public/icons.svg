@@ -14,9 +14,9 @@
     <symbol id="icon-chevron-left" viewBox="0 0 32 32">
       <path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="m20 24-8-8 8-8" style="stroke:var(--color3, #f9f9f9)"/>
     </symbol>
-    <symbol id="icon-chevron-rihgt" viewBox="0 0 32 32">
-      <path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m12 8 8 8-8 8" style="stroke:var(--color3, #f9f9f9)"/>
-    </symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 32 32">
+  <path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="m12 8 8 8-8 8" style="stroke:var(--color3, #f9f9f9)"/>
+</symbol>
     <symbol id="icon-burger-menu" viewBox="0 0 32 32">
       <path fill="none" stroke="#f9f9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286" d="M4 16h24M4 8h24M12 24h16" style="stroke:var(--color3, #f9f9f9)"/>
     </symbol>
