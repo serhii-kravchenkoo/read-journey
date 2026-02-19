@@ -1,10 +1,10 @@
-import { BeatLoader } from "react-spinners";
-import css from "./Loader.module.css";
+import { BeatLoader } from 'react-spinners';
+import css from './Loader.module.css';
 
 export default function Loader() {
   return (
     <div className={css.loader}>
-      <BeatLoader color="#494b4a" size={24} />
+      <BeatLoader color="#b4b8b6" size={24} />
     </div>
   );
 }
