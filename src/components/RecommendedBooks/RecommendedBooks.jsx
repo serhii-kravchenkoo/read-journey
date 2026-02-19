@@ -67,7 +67,7 @@ export default function RecommendedBooks({ filters }) {
   };
 
   return (
-    <section className={styles.wrapper}>
+    <section className={styles.recommendedBooks}>
       <h2>Recommended</h2>
       {loading && <Loader />}
       <button onClick={handlePrev} disabled={page === 1}>

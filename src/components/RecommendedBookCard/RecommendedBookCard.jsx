@@ -7,7 +7,7 @@ export default function RecommendedBookCard({ book, onBookClick }) {
         className={styles.image}
         src={book.imageUrl}
         alt={book.title}
-        width="120"
+        width="50"
         onClick={() => onBookClick(book)}
       />
       <h3 className={styles.title}>{book.title}</h3>

@@ -1,11 +1,25 @@
 .dashboard {
     background: #1f1f1f;
-    border-radius: 24px;
-    padding: 24px;
-
+    border-radius: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-
+    gap: 20px;
     height: fit-content;
+}
+
+@media (min-width: 768px) {
+    .dashboard {
+        padding: 32px;
+        gap: 32px;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1440px) {
+    .dashboard {
+        flex-direction: column;
+        padding: 40px 20px 20px;
+        width: 353px;
+    }
 }

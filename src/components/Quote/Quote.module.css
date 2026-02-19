@@ -1,0 +1,9 @@
+.quote {
+    display: none;
+}
+
+@media (min-width: 1440px) {
+    .quote {
+        display: block;
+    }
+}
