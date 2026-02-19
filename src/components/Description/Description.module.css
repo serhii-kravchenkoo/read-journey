@@ -5,6 +5,7 @@
     background: #262626;
     border-radius: 12px;
     padding: 20px;
+    min-width: 313px;
 }
 
 .description>*:last-child {
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: row;
     gap: 12px;
+
 }
 
 .stepNumber {
@@ -47,6 +49,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.28571;
+    letter-spacing: -0.02em;
     color: #f9f9f9;
 
 }
@@ -70,4 +73,29 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #686868;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        color: #f9f9f9;
+        margin-bottom: 20px;
+    }
+
+    .stepNumber {
+        height: 44px;
+        width: 44px;
+        font-size: 20px;
+        padding: 13px 18px;
+    }
+
+    .description>*:last-child {
+        margin-top: 0px;
+    }
+
+    .textWrapper {
+        max-width: 253px;
+    }
 }

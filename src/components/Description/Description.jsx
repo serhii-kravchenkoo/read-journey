@@ -12,7 +12,8 @@ export default function Description() {
           Create a personal library:
           <span className={styles.highlight}>
             {'  '}
-            add the books you intend to read to it.
+            add <br /> the books you intend to read <br />
+            to it.
           </span>
         </p>
       </div>
