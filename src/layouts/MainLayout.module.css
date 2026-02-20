@@ -1,0 +1,11 @@
+.layout {
+    min-height: 100vh;
+    /* займає всю висоту екрану */
+    display: flex;
+    flex-direction: column;
+    /* header зверху, main під ним */
+    justify-content: center;
+    /* вертикальне центрування */
+    align-items: center;
+    /* горизонтальне центрування */
+}

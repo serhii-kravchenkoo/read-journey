@@ -54,24 +54,35 @@
 }
 
 
+@media (min-width: 768px) {
+    .recommendedBooks {
+        padding: 40px;
+        gap: 20px;
+    }
 
-/* 
+    .title {
+        font-size: 28px;
+        line-height: 1.14286;
+        letter-spacing: 0.02em;
+    }
 
+    .button {
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+    }
 
-
-.list {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 20px;
+    .list {
+        gap: 27px 25px;
+    }
 }
-
-
 
 @media (min-width: 1440px) {
     .recommendedBooks {
-        flex-direction: column;
         padding: 40px 40px 28px 40px;
-        width: 847px;
     }
-} */
+
+    .list {
+        gap: 27px 20px;
+    }
+}

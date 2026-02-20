@@ -5,7 +5,7 @@
     background: #262626;
     border-radius: 12px;
     padding: 20px;
-    min-width: 313px;
+    max-width: 313px;
 }
 
 .description>*:last-child {
@@ -97,5 +97,11 @@
 
     .textWrapper {
         max-width: 253px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .description {
+        border-radius: 30px;
     }
 }
