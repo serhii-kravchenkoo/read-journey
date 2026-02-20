@@ -20,10 +20,9 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 70%;
-    /* можна 50-70% */
+    width: 200px;
     height: 100%;
-    background-color: #2a2a2a;
+    background-color: #262626;
     transform: translateX(100%);
     transition: transform 0.35s ease;
     z-index: 50;
@@ -31,7 +30,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
+    /* padding-top: 40px; */
 }
 
 .openPanel {
@@ -43,7 +42,8 @@
     top: 34px;
     right: 40px;
     cursor: pointer;
-    color: black
+    padding: 0;
+
 }
 
 .closeIcon {
@@ -55,22 +55,35 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    margin-top: 280px;
+}
+
+.noActive {
+    color: #686868;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .active {
-    font-weight: bold;
-    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    color: #f9f9f9;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
 }
-
 .logoutBtn {
-    height: 38px;
-    padding: 0 20px;
-    margin-bottom: 20px;
-    border: 1px solid #fff;
-    background: none;
-    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
+    line-height: 1.28571;
+    letter-spacing: 0.02em;
+    color: #f9f9f9;
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
