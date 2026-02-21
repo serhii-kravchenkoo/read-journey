@@ -29,7 +29,7 @@ export default function BookModal({ book, onClose, alreadyAdded }) {
       }
     }
   };
-
+  
   return createPortal(
     <div onClick={onClose} className={styles.overlay}>
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
@@ -39,7 +39,7 @@ export default function BookModal({ book, onClose, alreadyAdded }) {
           </svg>
         </button>
         <img src={book.imageUrl} alt={book.title} className={styles.image} />
-        <h2 className={styles.title?.trim().split(/\s+/)[0]}>{book.title}</h2>
+        <h2 className={styles.title}>{book.title?.trim().split(/\s+/)[0]}</h2>
         <p className={styles.author}>{book.author}</p>
         <p className={styles.totalPages}>{book.totalPages} pages</p>
         <button
