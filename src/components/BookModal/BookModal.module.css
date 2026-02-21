@@ -1,0 +1,78 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: #1f1f1f;
+    border: 1px solid rgba(104, 104, 104, 0.2);
+    border-radius: 12px;
+    width: 335px;
+
+    position: relative;
+    padding: 40px 96.5px 40px 97.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+
+}
+
+.image {
+    border-radius: 8px;
+    width: 140px;
+    height: 213px;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f9f9f9;
+    margin-bottom: 2px;
+}
+
+
+.author {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: -0.02em;
+    color: #686868;
+    margin-bottom: 4px;
+}
+
+.totalPages {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.addToLibraryButton {
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    border-radius: 30px;
+    padding: 12px 24px;
+    width: 141px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.28571;
+    letter-spacing: 0.02em;
+    color: #f9f9f9;
+}

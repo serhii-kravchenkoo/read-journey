@@ -1,21 +1,25 @@
-import { Routes, Route, Navigate } from "react-router-dom";
-import Register from "../pages/Register/Register";
-import Login from "../pages/Login/Login";
-import Recommended from "../pages/Recommended/Recommended";
-import ProtectedRoute from "./ProtectedRoute";
-import Library from "../pages/Library/Library";
-import MainLayout from "../layouts/MainLayout";
-import Reading from "../pages/Reading/Reading";
-
-
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Register from '../pages/Register/Register';
+import Login from '../pages/Login/Login';
+import Recommended from '../pages/Recommended/Recommended';
+import ProtectedRoute from './ProtectedRoute';
+import Library from '../pages/Library/Library';
+import MainLayout from '../layouts/MainLayout';
+import Reading from '../pages/Reading/Reading';
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/register" replace />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route element={<ProtectedRoute><MainLayout /></ProtectedRoute>}>
+      <Route
+        element={
+          <ProtectedRoute>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="/recommended" element={<Recommended />} />
         <Route path="/library" element={<Library />} />
         <Route path="/reading/:id" element={<Reading />} />

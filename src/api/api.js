@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: "https://readjourney.b.goit.study/api",
+  baseURL: 'https://readjourney.b.goit.study/api',
 });
 
 api.interceptors.request.use(config => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token');
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
@@ -13,4 +13,3 @@ api.interceptors.request.use(config => {
 
   return config;
 });
-
