@@ -1,0 +1,24 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px auto 0;
+    max-width: 335px;
+}
+
+@media (min-width: 768px) {
+
+    .section {
+        max-width: 704px;
+        gap: 16px;
+        margin: 16px auto 0;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .section {
+        max-width: 1216px;
+        flex-direction: row;
+    }
+}

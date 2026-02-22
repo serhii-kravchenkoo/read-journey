@@ -29,7 +29,7 @@ export default function BookModal({ book, onClose, alreadyAdded }) {
       }
     }
   };
-  
+
   return createPortal(
     <div onClick={onClose} className={styles.overlay}>
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>

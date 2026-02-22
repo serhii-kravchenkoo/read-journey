@@ -1,30 +1,75 @@
-.empty {
-    height: 60vh;
+.library {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    background: #1f1f1f;
+    border-radius: 30px;
+    height: 407px;
 
+}
+
+.titleWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f9f9f9;
+
+}
+
+.statusSelect {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    border: 1px solid #3e3e3e;
+    border-radius: 12px;
+    padding: 12px 14px;
+    background-color: transparent;
+    color: #f9f9f9;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+
+.statusSelect option {
+    background-color: #262626;
+    color: #686868;
+    font-weight: 500;
+    font-size: 12px;
+
+}
+
+
+.empty {
+    margin-top: 63px;
+    height: 164px;
+    width: 197px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
+    gap: 10px;
 }
 
 .emptyIcon {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-
+    border-radius: 100%;
+    padding: 25px;
     background: rgba(255, 255, 255, 0.05);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 48px;
-    margin-bottom: 16px;
 }
 
 .emptyText {
-    color: #9b9b9b;
-    max-width: 260px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #f9f9f9;
 }

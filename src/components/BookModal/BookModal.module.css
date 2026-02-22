@@ -76,3 +76,35 @@
     letter-spacing: 0.02em;
     color: #f9f9f9;
 }
+
+@media (min-width: 768px) {
+    .modalContent {
+        width: 500px;
+        padding: 50px 169px;
+    }
+
+    .image {
+        width: 153px;
+        height: 233px;
+    }
+
+    .title {
+        font-size: 20px;
+        line-height: 1;
+            letter-spacing: -0.02em;
+            color: #f9f9f9;
+    }
+
+    .author {
+        font-size: 14px;
+    }
+
+    .totalPages {
+    margin-bottom: 32px;
+    }
+        .addToLibraryButton {
+            width: 162px;
+            font-size: 16px;
+        }
+
+}

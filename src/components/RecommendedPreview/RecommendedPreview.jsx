@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
-import { getRecommendedBooks } from "../../api/books";
-import { Link } from "react-router-dom";
-import css from "./RecommendedPreview.module.css";
+import { useEffect, useState } from 'react';
+import { getRecommendedBooks } from '../../api/books';
+import { Link } from 'react-router-dom';
+import css from './RecommendedPreview.module.css';
 
 export default function RecommendedPreview() {
-
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     const fetchRecommended = async () => {
       try {
-          const data = await getRecommendedBooks();
-          
-        setBooks(data.results.slice(0, 3));
+        const data = await getRecommendedBooks();
 
+        setBooks(data.results.slice(0, 3));
       } catch (error) {
         console.log(error);
       }
@@ -23,8 +21,7 @@ export default function RecommendedPreview() {
   }, []);
 
   return (
-    <div className={css.container}>
-
+    <div className={css.preview}>
       <h2>Recommended books</h2>
 
       <div className={css.list}>
@@ -40,9 +37,12 @@ export default function RecommendedPreview() {
       <div className={css.footer}>
         <Link to="/recommended">Home</Link>
 
-        <Link to="/recommended">→</Link>
+        <Link to="/recommended">
+          <svg width="20" height="20">
+            <use href="/public/icons.svg#icon-log-in" />
+          </svg>
+        </Link>
       </div>
-
     </div>
   );
 }

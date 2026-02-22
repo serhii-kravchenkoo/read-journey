@@ -1,55 +1,70 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import css from "./AddBook.module.css";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import styles from './AddBook.module.css';
 
 const validationSchema = Yup.object({
-  title: Yup.string().required("Required"),
-  author: Yup.string().required("Required"),
-  totalPages: Yup.number()
-    .typeError("Must be number")
-    .required("Required"),
+  title: Yup.string().required('Required'),
+  author: Yup.string().required('Required'),
+  totalPages: Yup.number().typeError('Must be number').required('Required'),
 });
 
-export default function AddBook({onAdd}) {
+export default function AddBook({ onAdd }) {
   return (
-    <div className={css.wrapper}>
-      <h3>Create your library:</h3>
+    <div className={styles.addBook}>
+      <h3 className={styles.title}>Create your library:</h3>
 
       <Formik
         initialValues={{
-          title: "",
-          author: "",
-          totalPages: "",
+          title: '',
+          author: '',
+          totalPages: '',
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
+        onSubmit={values => {
           onAdd(values);
         }}
       >
-        <Form className={css.form}>
+        <Form className={styles.form}>
+          <label className={styles.label}>
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputLabel}>Book title:</span>
+              <Field
+                name="title"
+                placeholder="Enter text"
+                className={styles.input}
+              />
+            </div>
+            <ErrorMessage name="title" component="p" />
+          </label>
 
-          <div className={css.field}>
-            <span>Book title:</span>
-            <Field name="title" placeholder="Enter text" />
-          </div>
-          <ErrorMessage name="title" component="p" />
+          <label className={styles.label}>
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputLabel}>The author:</span>
+              <Field
+                name="author"
+                placeholder="Enter text"
+                className={styles.input}
+              />
+            </div>
+            <ErrorMessage name="author" component="p" />
+          </label>
 
-          <div className={css.field}>
-            <span>The author:</span>
-            <Field name="author" placeholder="Enter text" />
-          </div>
-          <ErrorMessage name="author" component="p" />
+          <label className={styles.label}>
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputLabel}>Number of pages:</span>
+              <Field
+                name="totalPages"
+                placeholder="0"
+                type="number"
+                className={styles.input}
+              />
+            </div>
+            <ErrorMessage name="totalPages" component="p" />
+          </label>
 
-          <div className={css.field}>
-            <span>Number of pages:</span>
-            <Field name="totalPages" placeholder="0" />
-          </div>
-          <ErrorMessage name="totalPages" component="p" />
-
-          <button type="submit">
+          <button type="submit" className={styles.button}>
             Add book
           </button>
-
         </Form>
       </Formik>
     </div>
