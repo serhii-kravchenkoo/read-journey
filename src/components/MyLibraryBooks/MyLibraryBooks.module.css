@@ -122,6 +122,7 @@
 @media (min-width: 1440px) {
     .library {
         height: 651px;
+        width: 847px;
     }
 
     .empty {

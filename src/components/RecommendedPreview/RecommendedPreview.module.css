@@ -104,3 +104,10 @@
         height: 24px;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .preview {
+        padding: 20px;
+        margin-top: 57.3px;
+    }
+}
