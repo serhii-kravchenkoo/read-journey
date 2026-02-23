@@ -80,6 +80,8 @@
 @media (min-width: 1440px) {
     .recommendedBooks {
         padding: 40px 40px 28px 40px;
+        height: 651px;
+        width: 847px;
     }
 
     .list {
