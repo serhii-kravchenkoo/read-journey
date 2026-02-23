@@ -67,13 +67,18 @@ export default function MyLibraryBooks({ refreshKey }) {
       ) : books.length === 0 ? (
         <div className={css.empty}>
           <div className={css.emptyIcon}>
-            <svg width="50" height="50">
-              <use href="/public/icons (1).svg#check-o" />
-            </svg>
+            <img
+              className={css.emptyIconImage}
+              height="50"
+              width="50"
+              src="/public/books.png"
+              alt="Empty library icon"
+            />
           </div>
           <p className={css.emptyText}>
-            To start training, add some of your books or from the recommended
-            ones
+            To start training, add{' '}
+            <span className={css.highlight}>some of your books</span> or from
+            the recommended ones
           </p>
         </div>
       ) : (

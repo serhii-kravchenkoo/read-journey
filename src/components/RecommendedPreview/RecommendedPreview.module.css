@@ -77,3 +77,30 @@
 .footer a:hover {
     color: #fff;
 }
+
+@media screen and (min-width: 768px) {
+    .preview {
+        padding: 26px 22px 27px 18px;
+        width: 313px;
+    }
+
+    .preview h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer a {
+        font-size: 14px;
+        line-height: 1.28571;
+    }
+
+    .list {
+        gap: 20px;
+        margin-bottom: 14px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
