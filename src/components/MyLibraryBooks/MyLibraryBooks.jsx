@@ -82,7 +82,7 @@ export default function MyLibraryBooks({ refreshKey }) {
           </p>
         </div>
       ) : (
-        <ul>
+        <ul className={css.listLibrary}>
           {books.map(book => (
             <MyLibraryBookCard
               key={book._id}

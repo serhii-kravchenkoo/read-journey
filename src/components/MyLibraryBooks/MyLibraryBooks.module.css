@@ -76,6 +76,13 @@
     color: #686868;
 }
 
+.listLibrary {
+    margin-top: 14px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 @media (min-width: 768px) {
     .library {
         padding: 40px;

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-trash" viewBox="0 0 32 32">
-      <path fill="none" stroke="#686868" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286" d="M4 8h24M25.334 8v18.667a2.668 2.668 0 0 1-2.667 2.667H9.334a2.668 2.668 0 0 1-2.667-2.667V8m4 0V5.333a2.67 2.67 0 0 1 2.667-2.667h5.333a2.668 2.668 0 0 1 2.667 2.667V8M13.333 14.667v8M18.667 14.667v8" style="stroke:var(--color1, #686868)"/>
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286" d="M4 8h24M25.334 8v18.667a2.668 2.668 0 0 1-2.667 2.667H9.334a2.668 2.668 0 0 1-2.667-2.667V8m4 0V5.333a2.67 2.67 0 0 1 2.667-2.667h5.333a2.668 2.668 0 0 1 2.667 2.667V8M13.333 14.667v8M18.667 14.667v8" />
     </symbol>
     <symbol id="icon-block-tab-active" viewBox="0 0 32 32">
       <path fill="#686868" d="M6.4 0h19.2A6.4 6.4 0 0 1 32 6.4v19.2a6.4 6.4 0 0 1-6.4 6.4H6.4A6.4 6.4 0 0 1 0 25.6V6.4A6.4 6.4 0 0 1 6.4 0z" style="fill:var(--color1, #686868)"/>
