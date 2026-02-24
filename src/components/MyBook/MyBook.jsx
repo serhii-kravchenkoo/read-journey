@@ -1,22 +1,23 @@
-import Loader from "../Loader/Loader";
+import Loader from '../Loader/Loader';
+import styles from './MyBook.module.css';
 
-export default function MyBook({book, loading}) {
+export default function MyBook({ book, loading }) {
+  if (loading) return <Loader />;
+  if (!book) return null;
 
-          if (loading) return <Loader />;
-          if (!book) return null;
-
-    return (
-      
+  return (
+    <div className={styles.myBook}>
+      <h2 className={styles.title}>My reading</h2>
+      <div className={styles.card}>
+        <img className={styles.img} src={book.imageUrl} alt={book.title} />
+        <h3 className={styles.titleBook}>{book.title}</h3>
+        <p className={styles.author}>{book.author}</p>
+      </div>
       <div>
-          <h2>My reading</h2>
-      <img
-        src={book.imageUrl}
-        alt={book.title}
-        width="120"
-      />
-      <h3>{book.title}</h3>
-        <p>{book.author}</p>
-        <svg></svg>
+        <svg className={styles.svg} height="40" width="40">
+          <use href="/icons.svg#icon-read-off"></use>
+        </svg>
+      </div>
     </div>
   );
 }

@@ -14,6 +14,7 @@ export default function BookModal({ book, onClose, alreadyAdded }) {
     };
 
     window.addEventListener('keydown', handleEsc);
+
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 

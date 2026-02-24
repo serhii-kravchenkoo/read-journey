@@ -13,7 +13,6 @@
     border: 1px solid rgba(104, 104, 104, 0.2);
     border-radius: 12px;
     width: 335px;
-
     position: relative;
     padding: 40px 96.5px 40px 97.5px;
     display: flex;
@@ -91,8 +90,8 @@
     .title {
         font-size: 20px;
         line-height: 1;
-            letter-spacing: -0.02em;
-            color: #f9f9f9;
+        letter-spacing: -0.02em;
+        color: #f9f9f9;
     }
 
     .author {
@@ -100,11 +99,12 @@
     }
 
     .totalPages {
-    margin-bottom: 32px;
+        margin-bottom: 32px;
     }
-        .addToLibraryButton {
-            width: 162px;
-            font-size: 16px;
-        }
+
+    .addToLibraryButton {
+        width: 162px;
+        font-size: 16px;
+    }
 
 }

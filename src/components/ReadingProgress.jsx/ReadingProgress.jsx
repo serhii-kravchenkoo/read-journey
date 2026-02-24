@@ -1,11 +1,10 @@
-import starImg from "../../img/star.png";
-import starImg2x from "../../img/star@2x.png";
-
-import css from "./ReadingProgress.module.css";
+import starImg from '../../img/star.png';
+import starImg2x from '../../img/star@2x.png';
+import css from './ReadingProgress.module.css';
 
 const ReadingProgress = () => {
   return (
-    <div>
+    <div className={css.readingProgress}>
       <h2 className={css.title}>Progress</h2>
       <div className={css.noProgressWrapper}>
         <p className={css.text}>
@@ -18,8 +17,8 @@ const ReadingProgress = () => {
             src={starImg}
             srcSet={`${starImg} 1x, ${starImg2x} 2x`}
             alt="star"
-            width={40}
-            height={40}
+            width={32}
+            height={32}
           />
         </div>
       </div>

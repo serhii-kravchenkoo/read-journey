@@ -1,0 +1,107 @@
+.myBook {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    background: #1f1f1f;
+    border-radius: 30px;
+    align-items: center;
+
+}
+
+.title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f9f9f9;
+    margin-bottom: 40px;
+    align-self: flex-start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 146px;
+    height: 271px;
+}
+
+.img {
+    width: 137px;
+    height: 208px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.titleBook {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #f9f9f9;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #686868;
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .myBook {
+        padding: 40px;
+        height: 518px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        margin-bottom: 32px;
+        line-height: 1.14286;
+        letter-spacing: 0.02em;
+        color: #f9f9f9;
+    }
+
+    .card {
+        width: 169px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .myBook {
+        height: 651px;
+        width: 847px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        margin-bottom: 44px;
+        line-height: 1.14286;
+        letter-spacing: 0.02em;
+        color: #f9f9f9;
+
+    }
+
+    .svg {
+        height: 50px;
+        width: 50px;
+    }
+
+    .img {
+        width: 224px;
+        height: 340px
+    }
+
+    .card {
+        margin-bottom: 150px;
+    }
+}
