@@ -1,9 +1,4 @@
-.details {
-    width: 295px;
-    height: 211px;
-}
-
-.header {
+.titleBtnsWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,28 +6,357 @@
 }
 
 .title {
-    font-weight: 700;
     font-size: 18px;
     line-height: 1;
-    letter-spacing: -0.02em;
-    color: #f9f9f9;
 }
 
-.icons {
+.btnsList {
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 
-.icon {
-    stroke: #6b6b6b;
-    cursor: pointer;
-    transition: 0.3s ease;
+.tabBtn {
+    display: block;
 }
 
-.icon:hover {
-    stroke: #ffffff;
+.infoWrapper {
+    border-radius: 12px;
+    background-color: var(--dark-tertiary);
 }
 
-.active {
-    stroke: #ffffff;
+.diaryWrapper {
+    padding: 16px;
+    height: 211px;
+    overflow-y: auto;
+}
+
+.diaryWrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.diaryWrapper::-webkit-scrollbar-track {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.diaryWrapper::-webkit-scrollbar-thumb {
+    background: var(--light-secondary);
+    border-radius: 15px;
+    height: 100px;
+}
+
+.diaryList {
+    position: relative;
+}
+
+.diaryList::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    z-index: 1;
+    width: 2px;
+    height: calc(100%);
+    background-color: var(--dark-secondary);
+}
+
+.diaryItem:not(:last-child) {
+    margin-bottom: 17px;
+}
+
+.datePages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.squareDate {
+    display: flex;
+    gap: 9px;
+}
+
+.square {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--light-secondary);
+}
+
+.squareInner {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background-color: var(--dark-secondary);
+}
+
+.diaryItem:first-child .square {
+    background-color: currentColor;
+}
+
+.diaryItem:first-child .squareInner {
+    background-color: var(--dark-primary);
+}
+
+.date {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.02em;
+    color: var(--light-secondary);
+    padding-top: 1px;
+}
+
+.diaryItem:first-child .date {
+    color: currentColor;
+}
+
+.pages {
+    padding-right: 20px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--light-secondary);
+}
+
+.percentPerHour {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+}
+
+.percentPerHour:not(:last-child) {
+    margin-bottom: 17px;
+}
+
+.percent {
+    font-size: 14px;
+    line-height: 1.29;
+    margin-bottom: 4px;
+}
+
+.minutes {
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--light-secondary);
+}
+
+.lineBtn {
+    display: flex;
+    gap: 6px;
+}
+
+.line {
+    margin-bottom: 7px;
+}
+
+.perHour {
+    max-width: 43px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--light-secondary);
+}
+
+.trashBtn {
+    width: 14px;
+    height: 14px;
+    padding-top: 2px;
+}
+
+.statisticWrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+}
+
+.circleWrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.fullPercentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.11;
+}
+
+.percentageWrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.marker {
+    border-radius: 4px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--accent-secondary);
+}
+
+.percentage {
+    font-size: 14px;
+    line-height: 1.29;
+    margin-bottom: 4px;
+}
+
+.pagesReaded {
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--light-secondary);
+}
+
+@media screen and (min-width: 768px) {
+    .contentWrapper {
+        width: 321px;
+    }
+
+    .titleBtnsWrapper {
+        padding-right: 15px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .diaryWrapper {
+        height: 252px;
+    }
+
+    .diaryItem:not(:last-child) {
+        margin-bottom: 14px;
+    }
+
+    .squareDate {
+        gap: 10px;
+    }
+
+    .square {
+        width: 20px;
+        height: 20px;
+    }
+
+    .squareInner {
+        width: 12px;
+        height: 12px;
+    }
+
+    .date {
+        font-size: 16px;
+        line-height: 1.12;
+    }
+
+    .pages {
+        padding-right: 24px;
+        font-size: 14px;
+        line-height: 1.29;
+    }
+
+    .percentPerHour {
+        padding-left: 30px;
+    }
+
+    .percent {
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .minutes {
+        font-size: 12px;
+        line-height: 1.17;
+    }
+
+    .lineBtn {
+        gap: 8px;
+    }
+
+    .line {
+        width: 59px;
+        height: 25px;
+    }
+
+    .perHour {
+        max-width: 59px;
+        font-size: 12px;
+        line-height: 1.17;
+    }
+
+    .trashBtn {
+        padding-top: 6px;
+    }
+
+    .statisticWrapper {
+        padding: 28px;
+        gap: 16px;
+    }
+
+    .fullPercentage {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .percentage {
+        font-size: 20px;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .pagesReaded {
+        font-size: 12px;
+        line-height: 1.17;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .contentWrapper {
+        width: 313px;
+    }
+
+    .titleBtnsWrapper {
+        padding-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .desctopText {
+        font-size: 14px;
+        line-height: 1.29;
+        color: var(--light-secondary);
+        max-width: 293px;
+        margin-bottom: 20px;
+    }
+
+    .diaryWrapper {
+        padding: 20px;
+        height: 373px;
+    }
+
+    .diaryItem:not(:last-child) {
+        margin-bottom: 22px;
+    }
+
+    .datePages {
+        margin-bottom: 28px;
+    }
+
+    .lineBtn {
+        gap: 8px;
+    }
+
+    .statisticWrapper {
+        padding: 20px;
+        gap: 10px;
+    }
 }

@@ -1,7 +1,10 @@
 .polygon {
-    fill: rgba(var(--accent-secondary-rgb), 0.2);
+    fill: #30B94D;
+    opacity: 0.2;
+
 }
 
 .line {
-    stroke: var(--accent-secondary);
+    stroke: #30b94d;
+
 }
