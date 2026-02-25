@@ -1,0 +1,38 @@
+.details {
+    width: 295px;
+    height: 211px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #f9f9f9;
+}
+
+.icons {
+    display: flex;
+    gap: 8px;
+}
+
+.icon {
+    stroke: #6b6b6b;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.icon:hover {
+    stroke: #ffffff;
+}
+
+.active {
+    stroke: #ffffff;
+}

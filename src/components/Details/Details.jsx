@@ -1,11 +1,11 @@
-import { useState } from "react";
-import RisingSpeedGraph from "../RisingSpeedGraph/RisingSpeedGraph";
-import CircularProgress from "../CircularProgress/CircularProgress";
-import { deleteReading } from "../../api/books";
+import { useState } from 'react';
+import RisingSpeedGraph from '../RisingSpeedGraph/RisingSpeedGraph';
+import CircularProgress from '../CircularProgress/CircularProgress';
+import { deleteReading } from '../../api/books';
+import styles from './Details.module.css';
 
 export default function Details({ book, refreshBook }) {
-
-  const [activeTab, setActiveTab] = useState("diary");
+  const [activeTab, setActiveTab] = useState('diary');
 
   if (!book) return null;
 
@@ -28,55 +28,64 @@ export default function Details({ book, refreshBook }) {
         Number(((totalPagesRead / book.totalPages) * 100).toFixed(2))
       )
     : 0;
-  const handleDeleteSession = async (sessionId) => {
+  const handleDeleteSession = async sessionId => {
     try {
       await deleteReading(book._id, sessionId);
       // alert("Session deleted!");
-      if (refreshBook) await refreshBook();  // підтягуємо свіжі дані з сервера
+      if (refreshBook) await refreshBook(); // підтягуємо свіжі дані з сервера
     } catch (err) {
       console.error(err);
-      alert("Цю книгу вже прочитано, тому сесії видалити не можна.");
+      alert('Цю книгу вже прочитано, тому сесії видалити не можна.');
     }
   };
-  
-  
+
   /* =========================
      RENDER
   ========================= */
 
   return (
-    <div>
-
+    <div className={styles.details}>
       {/* TABS */}
-      <div>
-        <button
-          className={activeTab === "diary" ? "active" : ""}
-          onClick={() => setActiveTab("diary")}
-        >
-          Diary
-        </button>
+      <div className={styles.header}>
+        <h2 className={styles.title}>
+          {activeTab === 'diary' ? 'Diary' : 'Statistics'}
+        </h2>
 
-        <button
-          className={activeTab === "statistics" ? "active" : ""}
-          onClick={() => setActiveTab("statistics")}
-        >
-          Statistics
-        </button>
+        <div className={styles.icons}>
+          <svg
+            onClick={() => setActiveTab('diary')}
+            className={`${styles.icon} ${
+              activeTab === 'diary' ? styles.active : ''
+            }`}
+            width="16"
+            height="16"
+          >
+            <use href="/icons.svg#icon-hourglass" />
+          </svg>
+
+          <svg
+            onClick={() => setActiveTab('statistics')}
+            className={`${styles.icon} ${
+              activeTab === 'statistics' ? styles.active : ''
+            }`}
+            width="16"
+            height="16"
+          >
+            <use href="/icons.svg#icon-icon-pie-chart" />
+          </svg>
+        </div>
       </div>
 
       {/* =========================
          DIARY TAB
       ========================= */}
-      {activeTab === "diary" && (
+      {activeTab === 'diary' && (
         <div>
-
           {progress.map((session, index) => {
-
             // якщо сесія ще не завершена — пропускаємо (бо немає finishReading)
             if (!session.finishReading) return null;
 
-            const pagesRead =
-              session.finishPage - session.startPage + 1;
+            const pagesRead = session.finishPage - session.startPage + 1;
 
             const percent = book.totalPages
               ? ((pagesRead / book.totalPages) * 100).toFixed(2)
@@ -85,71 +94,43 @@ export default function Details({ book, refreshBook }) {
             const start = new Date(session.startReading);
             const finish = new Date(session.finishReading);
 
-            const minutes = Math.max(
-              1,
-              Math.round((finish - start) / 60000)
-            );
+            const minutes = Math.max(1, Math.round((finish - start) / 60000));
 
             return (
               <div key={index}>
+                <div>{start.toLocaleDateString()}</div>
+
+                <div>{percent}%</div>
+
+                <div>{minutes} minutes</div>
+
+                <div>{pagesRead} pages</div>
 
                 <div>
-                  {start.toLocaleDateString()}
-                </div>
-
-                <div>
-                  {percent}%
-                </div>
-
-                <div>
-                  {minutes} minutes
-                </div>
-
-                <div>
-                  {pagesRead} pages
-                </div>
-
-                <div>
-                  <RisingSpeedGraph
-                    speed={session.speed}
-                    maxSpeed={100}
-                  />
+                  <RisingSpeedGraph speed={session.speed} maxSpeed={100} />
                   <button onClick={() => handleDeleteSession(session._id)}>
                     Delete
                   </button>
-                  <div>
-                    {session.speed} pages per hour
-                  </div>
+                  <div>{session.speed} pages per hour</div>
                 </div>
-
               </div>
             );
           })}
-
         </div>
       )}
 
       {/* =========================
          STATISTICS TAB
       ========================= */}
-      {activeTab === "statistics" && (
+      {activeTab === 'statistics' && (
         <div>
+          <CircularProgress progress={totalPercent} />
 
-          <CircularProgress
-            progress={totalPercent}
-          />
+          <div>{totalPercent}%</div>
 
-          <div>
-            {totalPercent}%
-          </div>
-
-          <div>
-            {totalPagesRead} pages read
-          </div>
-
+          <div>{totalPagesRead} pages read</div>
         </div>
       )}
-
     </div>
   );
 }

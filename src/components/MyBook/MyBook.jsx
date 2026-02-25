@@ -1,7 +1,7 @@
 import Loader from '../Loader/Loader';
 import styles from './MyBook.module.css';
 
-export default function MyBook({ book, loading }) {
+export default function MyBook({ book, loading, isReading }) {
   if (loading) return <Loader />;
   if (!book) return null;
 
@@ -10,13 +10,21 @@ export default function MyBook({ book, loading }) {
       <h2 className={styles.title}>My reading</h2>
       <div className={styles.card}>
         <img className={styles.img} src={book.imageUrl} alt={book.title} />
-        <h3 className={styles.titleBook}>{book.title}</h3>
+        <h3 className={styles.titleBook}>
+          {book.title?.trim().split(/\s+/)[0]}
+        </h3>
         <p className={styles.author}>{book.author}</p>
       </div>
       <div>
-        <svg className={styles.svg} height="40" width="40">
-          <use href="/icons.svg#icon-read-off"></use>
-        </svg>
+        {isReading ? (
+          <svg className={styles.svg} height="40" width="40">
+            <use href="/icons.svg#icon-read-on"></use>
+          </svg>
+        ) : (
+          <svg className={styles.svg} height="40" width="40">
+            <use href="/icons.svg#icon-read-off"></use>
+          </svg>
+        )}
       </div>
     </div>
   );

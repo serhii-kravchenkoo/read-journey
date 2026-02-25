@@ -50,7 +50,7 @@ export default function Reading() {
         )}
       </Dashboard>
 
-      <MyBook book={book} loading={loading} />
+      <MyBook book={book} loading={loading} isReading={isReading} />
       {showFinishModal && (
         <FinishModal onClose={() => setShowFinishModal(false)} />
       )}
