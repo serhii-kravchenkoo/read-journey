@@ -2,6 +2,7 @@ import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import css from './ModalBook.module.css';
 import { useEffect } from 'react';
+import placeholder from '../../img/placeholder-boo.png';
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -33,7 +34,11 @@ export default function ModalBook({ book, onClose }) {
             <use href="/icons.svg#icon-x" />
           </svg>
         </button>
-        <img src={book.imageUrl} alt={book.title} className={css.image} />
+        <img
+          src={book.imageUrl || placeholder}
+          alt={book.title}
+          className={css.image}
+        />
         <h2 className={css.title}>{book.title?.trim().split(/\s+/)[0]}</h2>
         <p className={css.author}>{book.author}</p>
         <p className={css.totalPages}>{book.totalPages} pages</p>

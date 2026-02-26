@@ -1,5 +1,6 @@
 import Loader from '../Loader/Loader';
 import styles from './MyBook.module.css';
+import placeholder from '../../img/placeholder-boo.png';
 
 export default function MyBook({ book, loading, isReading }) {
   if (loading) return <Loader />;
@@ -9,7 +10,11 @@ export default function MyBook({ book, loading, isReading }) {
     <div className={styles.myBook}>
       <h2 className={styles.title}>My reading</h2>
       <div className={styles.card}>
-        <img className={styles.img} src={book.imageUrl} alt={book.title} />
+        <img
+          className={styles.img}
+          src={book.imageUrl || placeholder}
+          alt={book.title}
+        />
         <h3 className={styles.titleBook}>
           {book.title?.trim().split(/\s+/)[0]}
         </h3>
