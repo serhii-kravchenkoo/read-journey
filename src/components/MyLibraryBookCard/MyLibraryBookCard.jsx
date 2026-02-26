@@ -1,5 +1,5 @@
 import styles from './MyLibraryBookCard.module.css';
-import placeholder from '../../img/placeholder-book.png';
+import placeholder from '../../img/placeholder-boo.png';
 
 export default function MyLibraryBookCard({ book, onDelete, onOpen }) {
   return (
