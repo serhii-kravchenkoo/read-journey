@@ -1,11 +1,12 @@
 import styles from './MyLibraryBookCard.module.css';
+import placeholder from '../../img/placeholder-book.png';
 
 export default function MyLibraryBookCard({ book, onDelete, onOpen }) {
   return (
     <li className={styles.card}>
       <img
         className={styles.img}
-        src={book.imageUrl || '/img/placeholder-boo.png'}
+        src={book.imageUrl || placeholder}
         alt={book.title}
         onClick={() => onOpen(book)}
       />
