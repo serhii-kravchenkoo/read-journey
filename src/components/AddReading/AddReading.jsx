@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { startReading, finishReading } from '../../api/books';
 import styles from './AddReading.module.css';
+import { toast } from 'react-toastify';
 
 const validationSchema = Yup.object({
   page: Yup.number()
@@ -28,9 +29,7 @@ export default function AddReading({
       }
       resetForm();
     } catch (error) {
-      // тут потім поставимо notification
-      alert('Server error');
-      console.log(error);
+      toast.error(error.message);
     }
   };
 

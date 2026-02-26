@@ -1,19 +1,19 @@
-import styles from "./Login.module.css";
-import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
-import { useNavigate, Link } from "react-router-dom";
-import { signinUser } from "../../api/auth";
-
-import phone1x from "../../img/iphone-mobile@1x.png";
-import phone2x from "../../img/iphone-mobile@2x.png";
-import phoneDesktop1x from "../../img/iphone-desctop@1x.png";
-import phoneDesktop2x from "../../img/iphone-desctop@2x.png";
+import styles from './Login.module.css';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+import { useNavigate, Link } from 'react-router-dom';
+import { signinUser } from '../../api/auth';
+import { toast } from 'react-toastify';
+import phone1x from '../../img/iphone-mobile@1x.png';
+import phone2x from '../../img/iphone-mobile@2x.png';
+import phoneDesktop1x from '../../img/iphone-desctop@1x.png';
+import phoneDesktop2x from '../../img/iphone-desctop@2x.png';
 
 const validationSchema = Yup.object({
-  email: Yup.string().email("Invalid email").required("Email is required"),
+  email: Yup.string().email('Invalid email').required('Email is required'),
   password: Yup.string()
-    .min(7, "Minimum 7 characters")
-    .required("Password is required"),
+    .min(7, 'Minimum 7 characters')
+    .required('Password is required'),
 });
 
 export default function Login() {
@@ -22,7 +22,6 @@ export default function Login() {
   return (
     <section className={styles.section}>
       <div className={styles.register}>
-        
         <div className={styles.logoWrapper}>
           <svg className={styles.logoIcon} width="42" height="17">
             <use href="/icons.svg#icon-logo"></use>
@@ -31,26 +30,28 @@ export default function Login() {
         </div>
 
         <h1 className={styles.title}>
-          Expand your mind, reading <span className={styles.spanTitle}>a book</span>
+          Expand your mind, reading{' '}
+          <span className={styles.spanTitle}>a book</span>
         </h1>
 
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: '', password: '' }}
           validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
             try {
               const data = await signinUser(values);
-              localStorage.setItem("token", data.token);
-              navigate("/recommended");
+              localStorage.setItem('token', data.token);
+              navigate('/recommended');
             } catch (error) {
-              alert(error.response?.data?.message || "Login error");
+              const msg =
+                error.response?.data?.message || error.message || 'Login error';
+              toast.error(msg);
             } finally {
               setSubmitting(false);
             }
           }}
         >
           <Form className={styles.form}>
-            
             <label className={styles.label}>
               <div className={styles.inputWrapper}>
                 <span className={styles.inputLabel}>Mail:</span>

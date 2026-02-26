@@ -8,6 +8,7 @@ import phone1x from '../../img/iphone-mobile@1x.png';
 import phone2x from '../../img/iphone-mobile@2x.png';
 import phoneDesktop1x from '../../img/iphone-desctop@1x.png';
 import phoneDesktop2x from '../../img/iphone-desctop@2x.png';
+import { toast } from 'react-toastify';
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Name is required'),
@@ -45,8 +46,11 @@ const Register = () => {
 
               navigate('/recommended');
             } catch (error) {
-              console.error(error);
-              alert(error.response?.data?.message || 'Signup error');
+              const msg =
+                error.response?.data?.message ||
+                error.message ||
+                'Signup error';
+              toast.error(msg);
             } finally {
               setSubmitting(false);
             }
