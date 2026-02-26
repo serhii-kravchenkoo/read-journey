@@ -39,7 +39,7 @@ export default function RecommendedPreview() {
 
         <Link to="/recommended">
           <svg className={css.icon} width="20" height="20">
-            <use href="/public/icons.svg#icon-log-in" />
+            <use href="/icons.svg#icon-log-in" />
           </svg>
         </Link>
       </div>
