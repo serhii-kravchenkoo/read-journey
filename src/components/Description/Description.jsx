@@ -36,7 +36,7 @@ export default function Description() {
 
         <Link to="/library" className={styles.link}>
           <svg width="24" height="24">
-            <use href="/public/icons.svg#icon-log-in" />
+            <use href="/icons.svg#icon-log-in" />
           </svg>
         </Link>
       </div>
