@@ -1,3 +1,7 @@
+.contentWrapper {
+    width: 295px;
+}
+
 .titleBtnsWrapper {
     display: flex;
     justify-content: space-between;
@@ -16,13 +20,30 @@
     gap: 8px;
 }
 
+
+
 .tabBtn {
     display: block;
+    color: #686868;
+    /* неактивний */
+    transition: color 250ms ease;
 }
+
+.tabBtn svg {
+    fill: currentColor;
+}
+
+.tabBtn.active {
+    color: #ffffff;
+    /* активний */
+}
+
+
+
 
 .infoWrapper {
     border-radius: 12px;
-    background-color: var(--dark-tertiary);
+    background-color: #262626;
 }
 
 .diaryWrapper {
@@ -41,7 +62,7 @@
 }
 
 .diaryWrapper::-webkit-scrollbar-thumb {
-    background: var(--light-secondary);
+    background: #686868;
     border-radius: 15px;
     height: 100px;
 }
@@ -58,7 +79,7 @@
     z-index: 1;
     width: 2px;
     height: calc(100%);
-    background-color: var(--dark-secondary);
+    background-color: #1f1f1f;
 }
 
 .diaryItem:not(:last-child) {
@@ -86,7 +107,7 @@
     border-radius: 4px;
     width: 16px;
     height: 16px;
-    background-color: var(--light-secondary);
+    background-color: #686868;
 }
 
 .squareInner {
@@ -94,7 +115,7 @@
     width: 8px;
     height: 8px;
     border-radius: 2px;
-    background-color: var(--dark-secondary);
+    background-color: #1f1f1f;
 }
 
 .diaryItem:first-child .square {
@@ -102,7 +123,7 @@
 }
 
 .diaryItem:first-child .squareInner {
-    background-color: var(--dark-primary);
+    background-color: #141414;
 }
 
 .date {
@@ -110,7 +131,8 @@
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.02em;
-    color: var(--light-secondary);
+    color: #686868;
+    ;
     padding-top: 1px;
 }
 
@@ -122,7 +144,8 @@
     padding-right: 20px;
     font-size: 12px;
     line-height: 1.33;
-    color: var(--light-secondary);
+    color: #686868;
+    ;
 }
 
 .percentPerHour {
@@ -144,7 +167,7 @@
 .minutes {
     font-size: 10px;
     line-height: 1.2;
-    color: var(--light-secondary);
+    color: #686868;
 }
 
 .lineBtn {
@@ -161,13 +184,14 @@
     text-align: center;
     font-size: 10px;
     line-height: 1.2;
-    color: var(--light-secondary);
+    color: #686868;
 }
 
 .trashBtn {
     width: 14px;
     height: 14px;
     padding-top: 2px;
+    color: #686868;
 }
 
 .statisticWrapper {
@@ -202,7 +226,7 @@
     border-radius: 4px;
     width: 14px;
     height: 14px;
-    background-color: var(--accent-secondary);
+    background-color: #30b94d;
 }
 
 .percentage {
@@ -214,7 +238,7 @@
 .pagesReaded {
     font-size: 10px;
     line-height: 1.2;
-    color: var(--light-secondary);
+    color: #686868;
 }
 
 @media screen and (min-width: 768px) {
@@ -333,7 +357,7 @@
     .desctopText {
         font-size: 14px;
         line-height: 1.29;
-        color: var(--light-secondary);
+        color: #686868;
         max-width: 293px;
         margin-bottom: 20px;
     }

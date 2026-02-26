@@ -55,7 +55,9 @@ export default function Details({ book, refreshBook }) {
           <button
             type="button"
             onClick={() => setActiveTab('diary')}
-            className={styles.tabBtn}
+            className={`${styles.tabBtn} ${
+              activeTab === 'diary' ? styles.active : ''
+            }`}
           >
             <svg
               className={activeTab === 'diary' ? styles.active : ''}
@@ -69,7 +71,9 @@ export default function Details({ book, refreshBook }) {
           <button
             type="button"
             onClick={() => setActiveTab('statistics')}
-            className={styles.tabBtn}
+            className={`${styles.tabBtn} ${
+              activeTab === 'statistics' ? styles.active : ''
+            }`}
           >
             <svg
               className={activeTab === 'statistics' ? styles.active : ''}
