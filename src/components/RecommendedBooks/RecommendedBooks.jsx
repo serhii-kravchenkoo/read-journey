@@ -79,7 +79,7 @@ export default function RecommendedBooks({ filters }) {
             disabled={page === 1}
           >
             <svg className={styles.svg} width="16" height="16">
-              <use href="/public/icons.svg#icon-chevron-left" />
+              <use href="/icons.svg#icon-chevron-left" />
             </svg>
           </button>
 
@@ -89,7 +89,7 @@ export default function RecommendedBooks({ filters }) {
             disabled={page === totalPages}
           >
             <svg className={styles.svg} width="16" height="16">
-              <use href="/public/icons.svg#icon-chevron-right" />
+              <use href="/icons.svg#icon-chevron-right" />
             </svg>
           </button>
         </div>
