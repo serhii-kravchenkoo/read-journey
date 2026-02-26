@@ -71,7 +71,7 @@ export default function MyLibraryBooks({ refreshKey }) {
               className={css.emptyIconImage}
               height="50"
               width="50"
-              src="/public/books.png"
+              src="/books.png"
               alt="Empty library icon"
             />
           </div>
