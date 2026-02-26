@@ -5,7 +5,7 @@ export default function MyLibraryBookCard({ book, onDelete, onOpen }) {
     <li className={styles.card}>
       <img
         className={styles.img}
-        src={book.imageUrl}
+        src={book.imageUrl || '/images/placeholder-book.png'}
         alt={book.title}
         onClick={() => onOpen(book)}
       />
