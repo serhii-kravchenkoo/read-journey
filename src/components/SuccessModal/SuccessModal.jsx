@@ -28,7 +28,7 @@ export default function SuccessModal({ onClose }) {
         <div className={css.icon}>
           <img
             className={css.iconImage}
-            src="/src/img/👍.png"
+            src="/👍.png"
             alt="Success icon"
             height="50"
             width="50"
