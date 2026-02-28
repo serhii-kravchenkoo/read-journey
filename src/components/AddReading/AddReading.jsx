@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const validationSchema = Yup.object({
   page: Yup.number()
     .typeError('Must be a number')
-    // .required('Enter the page number')
+    .required('Enter the page number')
     .min(1, 'Page must be > 0'),
 });
 

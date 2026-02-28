@@ -5,7 +5,7 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLogOut }) => {
   return (
     <div
       className={`${css.overlay} ${isOpen ? css.open : ''}`}
-      onClick={toggleMenu} // закриваємо меню при кліку на overlay
+      onClick={toggleMenu}
     >
       <div
         className={`${css.mobileMenuPanel} ${isOpen ? css.openPanel : ''}`}

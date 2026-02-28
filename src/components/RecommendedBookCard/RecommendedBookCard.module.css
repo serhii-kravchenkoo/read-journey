@@ -19,9 +19,7 @@
     color: #f9f9f9;
     margin-bottom: 2px;
     white-space: nowrap;
-    /* Забороняє перенос рядка */
     overflow: hidden;
-    /* Ховає зайвий текст */
     text-overflow: ellipsis;
 }
 

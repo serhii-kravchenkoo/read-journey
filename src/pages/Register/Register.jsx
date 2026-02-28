@@ -67,7 +67,7 @@ const Register = () => {
                   placeholder="Ilona Ratushniak"
                 />
               </div>
-              {/* <ErrorMessage name="name" component="p" /> */}
+            
             </label>
 
             <label className={styles.label}>
@@ -80,7 +80,7 @@ const Register = () => {
                   placeholder="Your@email.com"
                 />
               </div>
-              {/* <ErrorMessage name="email" component="p" /> */}
+            
             </label>
 
             <label className={styles.label}>
@@ -93,7 +93,7 @@ const Register = () => {
                   placeholder="Yourpasswordhere"
                 />
               </div>
-              {/* <ErrorMessage name="password" component="p" /> */}
+           
             </label>
             <div className={styles.buttonWrapper}>
               <button type="submit" className={styles.button}>
@@ -108,13 +108,13 @@ const Register = () => {
       </div>
       <div className={styles.phone}>
         <picture>
-          {/* desktop */}
+         
           <source
             media="(min-width: 1440px)"
             srcSet={`${phoneDesktop1x} 1x, ${phoneDesktop2x} 2x`}
           />
 
-          {/* tablet/mobile */}
+        
           <img
             src={phone1x}
             srcSet={`${phone1x} 1x, ${phone2x} 2x`}

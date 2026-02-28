@@ -99,11 +99,7 @@ export default function RecommendedBooks({ filters }) {
         {books
           .slice(
             0,
-            window.innerWidth < 768
-              ? 2 // мобільні
-              : window.innerWidth < 1440
-                ? 8 // планшети
-                : 10 // десктоп
+            window.innerWidth < 768 ? 2 : window.innerWidth < 1440 ? 8 : 10
           )
           .map(book => (
             <RecommendedBookCard

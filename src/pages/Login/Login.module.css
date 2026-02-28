@@ -92,7 +92,7 @@
     color: #f9f9f9;
 }
 
-/* BUTTON */
+
 
 .buttonWrapper {
     display: flex;
@@ -118,7 +118,7 @@
     height: auto;
 }
 
-/* LINK */
+
 
 .link {
     margin-top: 12px;
@@ -128,7 +128,7 @@
     white-space: nowrap;
 }
 
-/* MOBILE 375 */
+
 
 @media (min-width: 375px) {
     .register {
@@ -136,7 +136,7 @@
     }
 }
 
-/* TABLET */
+
 
 @media (min-width: 768px) {
 
@@ -194,7 +194,7 @@
     }
 }
 
-/* DESKTOP */
+
 
 @media (min-width: 1440px) {
 

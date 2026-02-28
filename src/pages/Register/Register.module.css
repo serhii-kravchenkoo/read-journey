@@ -45,11 +45,7 @@
     color: rgba(227, 227, 227, 0.5);
 }
 
-/* =========================
-   FORM
-========================= */
 
-/* Контейнер форми */
 .form {
     display: flex;
     flex-direction: column;
@@ -57,7 +53,7 @@
 
 }
 
-/* label для форми */
+
 .label {
     display: flex;
     flex-direction: column;
@@ -66,34 +62,34 @@
     color: #686868;
 }
 
-/* обгортка для input + текст всередині */
+
 .inputWrapper {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* відстань між Name/Email/Password і placeholder */
+
     background-color: hsl(0, 0%, 15%);
     border-radius: 12px;
     padding: 0 14px;
     height: 44px;
 }
 
-/* текст всередині input (Name/Email/Password) */
+
 .inputLabel {
     color: #686868;
     white-space: nowrap;
-    /* щоб не переносився */
+
     font-size: 12px;
     font-weight: 500;
 }
 
-/* сам input */
+
 .input {
     flex: 1;
-    /* займає решту місця */
+
     border: none;
     background: transparent;
-    /* не перекриває фон wrapper */
+
     color: #f9f9f9;
     outline: none;
     font-size: 12px;
@@ -101,16 +97,14 @@
     height: 100%;
 }
 
-/* placeholder */
+
 .input::placeholder {
     color: #f9f9f9;
     opacity: 1;
-    /* щоб завжди був видно */
+
 }
 
-/* =========================
-   BUTTON
-========================= */
+
 .buttonWrapper {
     display: flex;
     justify-content: space-between;
@@ -143,9 +137,7 @@
     height: auto;
 }
 
-/* =========================
-   LINK
-========================= */
+
 
 .link {
     display: block;
@@ -158,9 +150,7 @@
 }
 
 
-/* =========================
-   MOBILE ADAPTIVE (375+)
-========================= */
+
 
 @media (min-width: 375px) {
     .register {
@@ -169,9 +159,7 @@
 }
 
 
-/* =========================
-   TABLET (768+)
-========================= */
+
 
 @media (min-width: 768px) {
     .register {
@@ -242,9 +230,6 @@
 
 
 
-/* =========================
-   DESKTOP (1440+)
-========================= */
 
 @media (min-width: 1440px) {
     .section {

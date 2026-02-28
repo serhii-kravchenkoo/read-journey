@@ -28,12 +28,12 @@
 .mainNav,
 .logout {
     display: none;
-    /* ховаємо навігацію і logout */
+
 }
 
 .burger {
     display: block;
-    /* показуємо кнопку ☰ */
+
 }
 
 .userBarBurgerWrapper {
@@ -58,15 +58,14 @@
     .mainNav,
     .logout {
         display: flex;
-        /* показуємо навігацію і logout */
+
     }
 
     .burger {
         display: none;
-        /* ховаємо кнопку ☰ */
+
     }
 
-    /* Навігація */
     .mainNav {
         display: flex;
         gap: 32px;
@@ -87,7 +86,7 @@
         color: #f9f9f9;
     }
 
-    /* Кнопка Log out */
+
     .logout {
         background: #262626;
         border-radius: 30px;

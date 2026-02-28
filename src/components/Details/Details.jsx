@@ -12,9 +12,7 @@ export default function Details({ book, refreshBook }) {
 
   const progress = book.progress || [];
 
-  /* =========================
-     CALCULATIONS
-  ========================= */
+ 
 
   const finishedSessions = progress.filter(s => s.finishReading);
 
@@ -39,13 +37,11 @@ export default function Details({ book, refreshBook }) {
     }
   };
 
-  /* =========================
-     RENDER
-  ========================= */
+  
 
   return (
     <div className={styles.contentWrapper}>
-      {/* HEADER */}
+     
       <div className={styles.titleBtnsWrapper}>
         <h2 className={styles.title}>
           {activeTab === 'diary' ? 'Diary' : 'Statistics'}
@@ -86,7 +82,7 @@ export default function Details({ book, refreshBook }) {
         </div>
       </div>
 
-      {/* DESKTOP TEXT */}
+     
       {activeTab === 'statistics' && (
         <p className={styles.desctopText}>
           Each page, each chapter is a new round of knowledge, a new step
@@ -96,7 +92,7 @@ export default function Details({ book, refreshBook }) {
       )}
 
       <div className={styles.infoWrapper}>
-        {/* ================= DIARY ================= */}
+       
         {activeTab === 'diary' && (
           <div className={styles.diaryWrapper}>
             <ul className={styles.diaryList}>
@@ -167,7 +163,7 @@ export default function Details({ book, refreshBook }) {
           </div>
         )}
 
-        {/* ================= STATISTICS ================= */}
+    
         {activeTab === 'statistics' && (
           <div className={styles.statisticWrapper}>
             <div className={styles.circleWrapper}>

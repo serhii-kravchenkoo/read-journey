@@ -30,7 +30,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* padding-top: 40px; */
 }
 
 .openPanel {
@@ -73,6 +72,7 @@
     line-height: 1.28571;
     letter-spacing: -0.02em;
 }
+
 .logoutBtn {
     font-weight: 700;
     font-size: 14px;
